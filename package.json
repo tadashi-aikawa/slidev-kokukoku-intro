@@ -1,0 +1,24 @@
+{
+  "name": "slidev-kokukoku-intro",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev",
+    "mockup": "slidev mockup.md --port 3050",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@iconify-json/vscode-icons": "1.2.57",
+    "@slidev/cli": "52.15.2",
+    "@slidev/theme-default": "0.25.0",
+    "@slidev/theme-seriph": "0.25.0",
+    "class-variance-authority": "0.7.1",
+    "vue": "3.5.38"
+  },
+  "devDependencies": {
+    "prettier": "3.8.4",
+    "prettier-plugin-slidev": "1.0.5",
+    "prettier-plugin-tailwindcss": "0.8.0"
+  }
+}
