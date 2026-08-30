@@ -32,19 +32,19 @@ class: mk-scroll kk-scroll kk-unroll kk-three-times
     <div class="kk-time-card kk-time-now"><strong>今</strong><span>現在時刻</span></div>
     <div class="kk-time-card kk-time-future"><strong>未来</strong><span>予定</span></div>
   </div>
-  <div class="kk-statement">3つを一つで扱うものは、案外ない</div>
+  <div class="kk-statement">3つを1つで扱うものは、案外ない</div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
 <div class="d-page-number kk-page-number">2 / 12</div>
 
 ---
-title: 三つの時間が一つのUIで動く
+title: 3つの時間が1つのUIで動く
 class: mk-scroll kk-scroll kk-sync
 ---
 
 <div class="d-grain"></div><div class="d-lamp"></div>
 <div class="d-scroll"><div class="d-paper"><div class="d-fiber"></div><div class="d-stain"></div>
 <div class="d-inner kk-inner kk-content">
-  <h1 class="kk-title">三つの時間が、一つのUIで動く</h1>
+  <h1 class="kk-title">3つの時間が、1つのUIで動く</h1>
   <TimeTriad />
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
 <div class="d-page-number kk-page-number">3 / 12</div>
@@ -59,7 +59,7 @@ class: mk-scroll kk-scroll kk-video-slide kk-video-a
 <div class="d-inner kk-inner kk-content">
   <div class="kk-side-demo">
     <div class="kk-video-frame kk-video-frame-a">
-      <ClickToLoopVideo src="/media/demo-a-invoke-and-track-tight.mp4" :preview-time="0.2" />
+      <ClickToLoopVideo src="/media/demo-a-invoke-and-track-tight.mp4" :preview-time="0.2" hide-until-click />
     </div>
     <div class="kk-vertical-copy kk-invoke-copy" aria-label="呼び出して計測する操作">
       <div class="kk-vertical-line kk-vertical-lead">ホットキーで呼び出す</div>
@@ -127,6 +127,7 @@ class: mk-scroll kk-scroll kk-candle-life
 ---
 title: 世界観と遊び心
 class: mk-scroll kk-scroll kk-playful
+transition: none
 ---
 
 <div class="d-grain"></div><div class="d-lamp"></div>
@@ -145,6 +146,7 @@ class: mk-scroll kk-scroll kk-playful
 ---
 title: 玉簪へフォーカス
 class: mk-scroll kk-scroll kk-playful kk-kanzashi-focus
+transition: none
 ---
 
 <div class="d-grain"></div><div class="d-lamp"></div>

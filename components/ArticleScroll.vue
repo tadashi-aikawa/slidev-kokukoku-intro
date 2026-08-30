@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onSlideEnter, onSlideLeave } from "@slidev/client"
-import { nextTick, ref } from "vue"
+import { onSlideEnter, onSlideLeave, useNav } from "@slidev/client"
+import { nextTick, ref, watch } from "vue"
 
 defineProps<{
   src: string
@@ -9,25 +9,20 @@ defineProps<{
 
 const image = ref<HTMLImageElement | null>(null)
 const viewport = ref<HTMLElement | null>(null)
+const active = ref(false)
+const { clicks } = useNav()
 let frameId = 0
-let timeoutId = 0
 let runId = 0
 let scrollAnimation: Animation | null = null
 
 function cancelScroll() {
   runId += 1
   cancelAnimationFrame(frameId)
-  window.clearTimeout(timeoutId)
   scrollAnimation?.cancel()
   scrollAnimation = null
-  const target = image.value
-  if (!target) return
-  target.style.transition = "none"
-  target.style.transform = "translateY(0)"
-  target.style.opacity = "1"
 }
 
-async function startScroll() {
+async function prepareScroll(animate: boolean) {
   cancelScroll()
   const currentRun = runId
   await nextTick()
@@ -49,31 +44,43 @@ async function startScroll() {
   target.style.opacity = "1"
   void target.offsetHeight
 
-  timeoutId = window.setTimeout(() => {
-    if (currentRun !== runId) return
-    frameId = requestAnimationFrame(() => {
-      frameId = requestAnimationFrame(() => {
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
+  if (!animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
 
-        scrollAnimation = target.animate([
-          { transform: startPosition },
-          { transform: endPosition },
-        ], {
-          duration: 26000,
-          easing: "linear",
-          fill: "forwards",
-        })
+  frameId = requestAnimationFrame(() => {
+    frameId = requestAnimationFrame(() => {
+      if (currentRun !== runId) return
+      scrollAnimation = target.animate([
+        { transform: startPosition },
+        { transform: endPosition },
+      ], {
+        duration: 26000,
+        easing: "linear",
+        fill: "forwards",
       })
     })
-  }, 600)
+  })
 }
 
-onSlideEnter(startScroll)
-onSlideLeave(cancelScroll)
+watch(clicks, (current, previous) => {
+  if (!active.value) return
+  if (current > 0 && previous === 0) void prepareScroll(true)
+  if (current === 0) void prepareScroll(false)
+})
+
+onSlideEnter(() => {
+  active.value = true
+  void prepareScroll(false)
+})
+
+onSlideLeave(() => {
+  active.value = false
+  cancelScroll()
+})
 </script>
 
 <template>
   <div ref="viewport" class="kk-article-viewport">
     <img ref="image" class="kk-article-capture" :src="src" :alt="alt" />
+    <span v-click class="kk-video-click-trigger" aria-hidden="true"></span>
   </div>
 </template>

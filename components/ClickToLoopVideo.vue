@@ -5,8 +5,10 @@ import { nextTick, ref, watch } from "vue"
 const props = withDefaults(defineProps<{
   src: string
   previewTime?: number
+  hideUntilClick?: boolean
 }>(), {
   previewTime: 0,
+  hideUntilClick: false,
 })
 
 const emit = defineEmits<{
@@ -17,6 +19,7 @@ const emit = defineEmits<{
 
 const video = ref<HTMLVideoElement | null>(null)
 const active = ref(false)
+const revealed = ref(false)
 const { clicks } = useNav()
 
 function showPreview() {
@@ -24,11 +27,18 @@ function showPreview() {
   if (!target) return
   target.pause()
   target.currentTime = props.previewTime
+  if (props.hideUntilClick) revealed.value = false
+}
+
+function handleLoadedMetadata() {
+  if (clicks.value === 0) showPreview()
 }
 
 async function playFromStart() {
   const target = video.value
   if (!target) return
+  revealed.value = true
+  await nextTick()
   target.pause()
   target.currentTime = 0
   try {
@@ -61,11 +71,12 @@ onSlideLeave(() => {
   <div class="kk-click-video">
     <video
       ref="video"
+      :class="{ 'kk-click-video-hidden': hideUntilClick && !revealed }"
       loop
       muted
       playsinline
       preload="auto"
-      @loadedmetadata="showPreview"
+      @loadedmetadata="handleLoadedMetadata"
       @play="emit('play', video!)"
       @pause="emit('pause', video!)"
       @timeupdate="emit('timeupdate', video!)"
