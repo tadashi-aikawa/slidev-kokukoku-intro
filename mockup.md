@@ -14,7 +14,7 @@ class: mk-index
 <div class="idx">
 <div class="idx-kicker">KOKUKOKU 紹介LT(5分)</div>
 <h1>見た目の型・4案</h1>
-<p class="idx-lead">同じ2枚(2枚目「3つの困りごと」/ 6枚目「溶ける和ろうそく」)を、4つの型で作り分けました。<br/>違うのは <b>光の質</b> と <b>動きの量</b>。文章ではなく、めくって体感してください。</p>
+<p class="idx-lead">同じ2枚(2枚目「3つの困りごと」/ 6枚目「溶ける和ろうそく」)を、4つの型で作り分けました。<br/>違うのは <b>光の質</b> と <b>動きの量</b>。案四だけ、<b>全9枚を通すための枚</b>を足してあります。</p>
 <div class="idx-grid">
 <div class="idx-card">
 <div class="idx-no">案 一</div>
@@ -38,10 +38,10 @@ class: mk-index
 <div class="idx-no">案 四</div>
 <div class="idx-name">巻物 <span>まきもの</span></div>
 <div class="idx-note">紙に墨と朱。<b>書</b>。<br/>横へ繰り出され、縦組みで読む。</div>
-<div class="idx-page">p.8 / p.9</div>
+<div class="idx-page">p.8 〜 p.12</div>
 </div>
 </div>
-<div class="idx-foot">案二を選定済み。<b>案四は案二と同じ絵の具・同じ書体</b>で、地を「黒」から「紙」へ裏返した派生です。混ぜるなら<b>案二を地</b>にして、<b>紙で語る枚(2・7枚目)だけ案四</b>。金は黒の世界、墨と朱は紙の世界と持ち場を分けてあるので、続けて出しても喧嘩しません。</div>
+<div class="idx-foot"><b>全9枚を案四で通せるか</b>を確かめる枚を足しました。紙を高くし(510→600px)、繰り出しを <b>1.5秒 → 0.75秒</b>・出揃いを <b>2.6秒 → 1.4秒</b>へ。型は2変奏 ── <b>詞書が主</b>(p.8 / p.9)と<b>絵が主</b>(p.11 / p.12)。難所の3枚が p.10 表紙(題箋だけ)・p.11 予定は「間隔」で見る(絵2点)・p.12 使い始め方(横書きのコマンドを貼紙で)です。</div>
 </div>
 
 <style>
@@ -69,7 +69,7 @@ class: mk-index
   position: absolute; right: 14px; top: 12px; font-size: 11px; letter-spacing: 0.18em; color: #DA5932;
 }
 .idx-card-picked::after { content: "選定"; }
-.idx-card-new::after { content: "追加"; }
+.idx-card-new::after { content: "統一案"; }
 .idx-no { font-family: "Zen Old Mincho", serif; font-size: 14px; letter-spacing: 0.3em; color: #AB8A55; }
 .idx-name { font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif; font-size: 28px; margin: 5px 0 10px; letter-spacing: 0.06em; }
 .idx-name span { display: block; font-size: 12px; color: #8A8069; letter-spacing: 0.2em; margin: 2px 0 0; }
@@ -434,7 +434,8 @@ transition: fade-out
 @keyframes b-slide { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes b-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .b-frame {
-  position: relative; aspect-ratio: 1440 / 800; width: 100%;
+  /* 動画Cは迅雷のクロップ後 864×944 の縦長。枠は実寸に合わせる */
+  position: relative; aspect-ratio: 864 / 944; width: 400px; margin-left: auto;
   border: 2px solid transparent;
   background-image: linear-gradient(#100E0A, #100E0A), linear-gradient(150deg, #E8D28F, #8E7134 45%, #E8D28F 100%);
   background-origin: border-box; background-clip: padding-box, border-box;
@@ -648,8 +649,8 @@ transition: slide-up
 </style>
 
 ---
-title: 案四 巻物 / 三つの困りごと
-class: mk-d8
+title: 案四 巻物 / 三つの困りごと(詞書が主)
+class: mk-scroll mk-d8
 transition: fade-out
 ---
 
@@ -659,15 +660,14 @@ transition: fade-out
 <div class="d-paper">
 <div class="d-fiber"></div>
 <div class="d-stain"></div>
-<div class="d-inner">
+<div class="d-inner d-mode-text">
 <div class="d-cols">
 <div class="d-daisen">困 り ご と</div>
-<div class="d-col d-col-title" style="--d:1.5s"><h1>三つの困りごと</h1></div>
-<div class="d-col" style="--d:1.75s"><span class="d-no">一</span>何に時間を使ったか分からない</div>
-<div class="d-col" style="--d:1.95s"><span class="d-no">二</span>次の予定まで、あと何分か<em>知りたいのは予定と予定の「間」</em></div>
-<div class="d-col" style="--d:2.15s"><span class="d-no">三</span>集中すると休憩を忘れる</div>
-<div class="d-col d-col-close" style="--d:2.4s">いま何をするかの材料。ひとつのパネルに</div>
-<div class="d-seal-col"><span class="d-seal">刻々</span></div>
+<div class="d-col d-col-title" style="--d:0.60s"><h1>三つの困りごと</h1></div>
+<div class="d-col" style="--d:0.70s"><span class="d-no">一</span>何に時間を使ったか分からない</div>
+<div class="d-col" style="--d:0.78s"><span class="d-no">二</span>次の予定まで、あと何分か<em>知りたいのは予定と予定の「間」</em></div>
+<div class="d-col" style="--d:0.86s"><span class="d-no">三</span>集中すると休憩を忘れる</div>
+<div class="d-col d-col-close" style="--d:0.94s">いま何をするかの材料。ひとつのパネルに</div>
 </div>
 <div class="d-art">
 <svg class="d-clock" viewBox="0 0 240 240" aria-hidden="true">
@@ -702,131 +702,27 @@ transition: fade-out
 <div class="d-tag">案四 巻物</div>
 
 <style>
-.slidev-layout.mk-d8 {
-  padding: 0; color: #F8ECD8; overflow: hidden; position: relative;
-  background: radial-gradient(120% 100% at 22% 18%, #171209 0%, #0A0806 66%);
-  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
-}
-.d-grain {
-  position: absolute; inset: 0; pointer-events: none; opacity: 0.45;
-  background-image:
-    radial-gradient(circle at 9% 82%, rgba(217,180,92,0.5) 0 1.4px, transparent 1.9px),
-    radial-gradient(circle at 21% 12%, rgba(217,180,92,0.42) 0 1.8px, transparent 2.3px),
-    radial-gradient(circle at 74% 92%, rgba(217,180,92,0.45) 0 1.1px, transparent 1.6px),
-    radial-gradient(circle at 90% 22%, rgba(217,180,92,0.4) 0 2px, transparent 2.6px),
-    radial-gradient(circle at 52% 6%, rgba(217,180,92,0.36) 0 1.3px, transparent 1.8px),
-    radial-gradient(circle at 96% 70%, rgba(217,180,92,0.42) 0 1.5px, transparent 2px);
-}
-.d-lamp {
-  position: absolute; right: 2%; top: 50%; width: 52%; height: 150%; transform: translateY(-50%);
-  background: radial-gradient(32% 30% at 50% 50%, rgba(255,199,92,0.13) 0%, rgba(218,138,50,0.04) 48%, rgba(0,0,0,0) 78%);
-  animation: d-breathe 7s ease-in-out infinite;
-}
-@keyframes d-breathe { 0%,100% { opacity: .78 } 50% { opacity: 1 } }
-.d-scroll { position: absolute; left: 64px; right: 64px; top: 92px; height: 510px; --span: 1112px; }
-.d-rod {
-  position: absolute; top: -18px; bottom: -18px; width: 20px; border-radius: 3px;
-  background: linear-gradient(90deg, #12100A 0%, #3E3220 26%, #6E5832 50%, #352B1B 78%, #100E09 100%);
-}
-.d-rod::before, .d-rod::after {
-  content: ""; position: absolute; left: -5px; width: 30px; height: 15px; border-radius: 3px;
-  background: linear-gradient(160deg, #EBD79A, #A98A52 55%, #6B551F);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.55);
-}
-.d-rod::before { top: -7px; }
-.d-rod::after { bottom: -7px; }
-.d-rod-r { right: 0; box-shadow: -10px 0 26px rgba(0,0,0,0.6); }
-.d-rod-l {
-  left: var(--span); box-shadow: 10px 0 26px rgba(0,0,0,0.6); z-index: 3;
-  animation: d-roll 1.5s .25s cubic-bezier(.2,.78,.24,1) forwards;
-}
-/* clip-path と同じメインスレッドの時計で動かすため transform ではなく left を使う */
-@keyframes d-roll { to { left: 0; } }
-.d-paper {
-  position: absolute; left: 20px; right: 20px; top: 14px; bottom: 14px;
-  isolation: isolate; overflow: hidden;
-  background:
-    repeating-linear-gradient(90deg, rgba(112,84,40,0) 0 78px, rgba(112,84,40,0.05) 104px, rgba(112,84,40,0) 132px),
-    radial-gradient(150% 130% at 84% 16%, #F1E6C9 0%, #E6D8B6 44%, #D8C69D 78%, #CBB78D 100%);
-  box-shadow:
-    inset 0 14px 24px -16px rgba(84,60,24,0.55), inset 0 -14px 24px -16px rgba(84,60,24,0.55),
-    0 26px 60px rgba(0,0,0,0.6);
-  clip-path: inset(0 0 0 100%);
-  animation: d-unroll 1.5s .25s cubic-bezier(.2,.78,.24,1) forwards;
-}
-@keyframes d-unroll { to { clip-path: inset(0 0 0 0); } }
-.d-fiber {
-  position: absolute; inset: 0; pointer-events: none; opacity: .55;
-  background-image:
-    repeating-linear-gradient(94deg, rgba(120,96,52,0.055) 0 1px, transparent 1px 6px),
-    repeating-linear-gradient(3deg, rgba(120,96,52,0.04) 0 1px, transparent 1px 5px);
-}
-.d-stain {
-  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: .34;
-  background-image:
-    radial-gradient(ellipse 120px 60px at 11% 84%, rgba(150,112,52,0.3), transparent 70%),
-    radial-gradient(ellipse 90px 70px at 44% 8%, rgba(150,112,52,0.22), transparent 72%),
-    radial-gradient(ellipse 150px 80px at 92% 90%, rgba(150,112,52,0.26), transparent 74%);
-}
-.d-inner {
-  position: relative; height: 100%; padding: 38px 46px;
-  display: flex; flex-direction: row-reverse; align-items: stretch; justify-content: space-between;
-}
-.d-cols { display: flex; flex-direction: row-reverse; align-items: stretch; }
-.d-daisen {
-  align-self: flex-start; writing-mode: vertical-rl; margin: 2px 2px 0 34px;
-  background: #F0E7CF; border: 1px solid rgba(60,48,26,0.45); padding: 14px 5px;
-  font-size: 13px; letter-spacing: 0.24em; color: #4A4032;
-  box-shadow: 0 3px 7px rgba(90,66,28,0.2);
-  opacity: 0; animation: d-in .8s 1.5s ease-out forwards;
-}
-.d-col {
-  writing-mode: vertical-rl; height: 100%; color: #2C2419; font-size: 24px; line-height: 1.5;
-  letter-spacing: 0.08em; font-weight: 400;
-  opacity: 0; animation: d-in 1s var(--d) ease-out forwards;
-}
-.d-col + .d-col { border-right: 1px solid rgba(60,48,26,0.15); padding-right: 21px; margin-right: 21px; }
-.slidev-layout.mk-d8 .d-col-title h1 {
-  writing-mode: vertical-rl; font-size: 38px; font-weight: 500; letter-spacing: 0.13em;
-  color: #241D13; margin: 0; line-height: 1.2;
-}
-.d-no { display: inline-block; color: #B23F26; font-size: 19px; letter-spacing: 0; margin-inline-end: 18px; }
-.d-col em {
-  display: block; font-style: normal; font-size: 16px; color: #6E6353; letter-spacing: 0.06em;
-  margin-right: 6px;
-}
-.d-col-close { font-size: 17px; color: #6E6353; letter-spacing: 0.12em; }
-.d-seal-col { align-self: flex-end; margin-right: 30px; padding-bottom: 6px; opacity: 0; animation: d-in .9s 2.6s ease-out forwards; }
-.d-seal {
-  display: grid; place-items: center; width: 54px; height: 54px;
-  writing-mode: vertical-rl; background: #C4432A; color: #F2E8CE;
-  font-size: 21px; letter-spacing: 0.08em; mix-blend-mode: multiply;
-  box-shadow: inset 0 0 0 1px rgba(242,232,206,0.5);
-}
-@keyframes d-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-.d-art { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; }
-.d-clock { width: 288px; height: 288px; fill: none; }
+/* 型の基盤は styles/index.css の .mk-scroll。ここは丸窓の時計だけ */
+.mk-d8 .d-clock { width: 344px; height: 344px; fill: none; }
 .d-ring {
   stroke: #2C2419; stroke-width: 2.6; stroke-linecap: round; opacity: .82;
   stroke-dasharray: 100 100; stroke-dashoffset: 100;
-  animation: d-draw 1.5s 1.6s cubic-bezier(.26,.7,.3,1) forwards;
+  animation: d-draw .55s .58s cubic-bezier(.26,.7,.3,1) forwards;
 }
 @keyframes d-draw { to { stroke-dashoffset: 0; } }
-.d-ring2 { stroke: rgba(44,36,25,0.22); stroke-width: 1; opacity: 0; animation: d-fade .9s 2.5s ease-out forwards; }
+.d-ring2 { stroke: rgba(44,36,25,0.22); stroke-width: 1; opacity: 0; animation: d-fade .28s 1.05s ease-out forwards; }
 .d-tick line { stroke: rgba(44,36,25,0.5); stroke-width: 1.6; stroke-linecap: round; }
-.d-tick { opacity: 0; animation: d-fade .9s 2.6s ease-out forwards; }
-.d-hands { opacity: 0; animation: d-fade .9s 2.85s ease-out forwards; }
-@keyframes d-fade { to { opacity: 1; } }
+.d-tick { opacity: 0; animation: d-fade .28s 1.12s ease-out forwards; }
+.d-hands { opacity: 0; animation: d-fade .28s 1.20s ease-out forwards; }
 .d-hand-h { stroke: #2C2419; stroke-width: 4; stroke-linecap: round; transform-origin: 120px 120px; transform: rotate(-58deg); }
 .d-hand-m { stroke: #2C2419; stroke-width: 2.4; stroke-linecap: round; transform-origin: 120px 120px; animation: d-spin 24s linear infinite; }
 @keyframes d-spin { from { transform: rotate(58deg); } to { transform: rotate(418deg); } }
 .d-pivot { fill: #B23F26; stroke: none; }
-.d-tag { position: absolute; left: 64px; bottom: 34px; font-size: 13px; letter-spacing: 0.3em; color: #5C5340; }
 </style>
 
 ---
-title: 案四 巻物 / 溶ける和ろうそく
-class: mk-d9
+title: 案四 巻物 / 溶ける和ろうそく(詞書が主)
+class: mk-scroll mk-d9
 transition: fade-out
 ---
 
@@ -836,23 +732,24 @@ transition: fade-out
 <div class="d-paper">
 <div class="d-fiber"></div>
 <div class="d-stain"></div>
-<div class="d-inner">
+<div class="d-inner d-mode-text">
 <div class="d-cols">
 <div class="d-daisen">和 ろ う そ く</div>
-<div class="d-col d-col-title" style="--d:1.5s"><h1>溶ける和ろうそく</h1></div>
-<div class="d-col" style="--d:1.75s"><span class="d-no">一</span>溜まるバーではなく、減る蝋燭</div>
-<div class="d-col" style="--d:1.95s"><span class="d-no">二</span>満ちたら休め。バーは逆だった</div>
-<div class="d-col" style="--d:2.15s"><span class="d-no">三</span>数字は出さない<em>そろそろか否かだけ</em></div>
-<div class="d-seal-col"><span class="d-seal">刻々</span></div>
+<div class="d-col d-col-title" style="--d:0.60s"><h1>溶ける和ろうそく</h1></div>
+<div class="d-col" style="--d:0.70s"><span class="d-no">一</span>溜まるバーではなく、減る蝋燭</div>
+<div class="d-col" style="--d:0.78s"><span class="d-no">二</span>満ちたら休め。バーは逆だった</div>
+<div class="d-col" style="--d:0.86s"><span class="d-no">三</span>数字は出さない<em>そろそろか否かだけ</em></div>
 </div>
 <div class="d-art">
+<div class="d-figbox">
 <div class="d-fig">
-<video class="d-video" autoplay muted loop playsinline>
+<video autoplay muted loop playsinline>
 <source src="./public/media/demo-c-candle-burnout.mp4" type="video/mp4" />
 </video>
 <div class="d-fast">早回し</div>
 </div>
 <div class="d-figcap">図 ― 燃え尽きて、また灯るまで</div>
+</div>
 </div>
 </div>
 </div>
@@ -862,121 +759,186 @@ transition: fade-out
 <div class="d-tag">案四 巻物</div>
 
 <style>
-.slidev-layout.mk-d9 {
-  padding: 0; color: #F8ECD8; overflow: hidden; position: relative;
-  background: radial-gradient(120% 100% at 22% 18%, #171209 0%, #0A0806 66%);
-  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+/* 型の基盤は styles/index.css の .mk-scroll。ここは動画Cの枠だけ */
+/* 動画Cは迅雷のクロップ後 864×944 の縦長。紙が高くなったぶん天地いっぱいに置ける */
+.mk-d9 .d-art { flex: 0 0 auto; }
+.mk-d9 .d-fig { width: 412px; aspect-ratio: 864 / 944; }
+</style>
+
+---
+title: 案四 巻物 / 表紙(題箋だけ)
+class: mk-scroll mk-d10
+transition: fade-out
+---
+
+<div class="d-grain"></div>
+<div class="d-lamp"></div>
+<div class="d-scroll">
+<div class="d-paper">
+<div class="d-fiber"></div>
+<div class="d-stain"></div>
+<div class="d-inner d-cover">
+<div class="d-cover-cols">
+<div class="d-gaidai">
+<span class="d-gaidai-ja">刻々</span>
+<span class="d-gaidai-en">KOKUKOKU</span>
+<span class="d-gaidai-sub">刻一刻と時を見守る</span>
+</div>
+<div class="d-cover-meta" style="--d:0.76s">macOS 用・自作の常駐パネル</div>
+</div>
+<div class="d-seal-col d-seal-cover"><span class="d-seal">刻々</span></div>
+</div>
+</div>
+<div class="d-rod d-rod-l"></div>
+<div class="d-rod d-rod-r"></div>
+</div>
+<div class="d-tag">案四 巻物 ― 表紙</div>
+
+<style>
+/* 型の基盤は styles/index.css の .mk-scroll。表紙は題箋1枚と副題だけで成立させる */
+.d-cover { justify-content: center; align-items: center; }
+.d-cover-cols { display: flex; flex-direction: row-reverse; align-items: center; }
+
+/* 外題(げだい)の題箋。中の枚の走り出しの題箋を、そのまま大きくしたもの */
+/* 題名・読み・副題をすべてこの1枚に入れ、紙の上には他に何も置かない */
+.d-gaidai {
+  display: flex; flex-direction: row-reverse; align-items: flex-start; justify-content: center;
+  box-sizing: border-box;
+  width: 196px; height: 300px; margin-left: 52px; padding: 30px 20px 0;
+  background: #F5EDD7; border: 1px solid rgba(60,48,26,0.5);
+  box-shadow: 0 6px 16px rgba(90,66,28,0.22), inset 0 0 0 5px #F5EDD7, inset 0 0 0 6px rgba(60,48,26,0.28);
+  opacity: 0; animation: d-in .5s .56s ease-out forwards;
 }
-.d-grain {
-  position: absolute; inset: 0; pointer-events: none; opacity: 0.45;
-  background-image:
-    radial-gradient(circle at 9% 82%, rgba(217,180,92,0.5) 0 1.4px, transparent 1.9px),
-    radial-gradient(circle at 21% 12%, rgba(217,180,92,0.42) 0 1.8px, transparent 2.3px),
-    radial-gradient(circle at 74% 92%, rgba(217,180,92,0.45) 0 1.1px, transparent 1.6px),
-    radial-gradient(circle at 90% 22%, rgba(217,180,92,0.4) 0 2px, transparent 2.6px),
-    radial-gradient(circle at 52% 6%, rgba(217,180,92,0.36) 0 1.3px, transparent 1.8px),
-    radial-gradient(circle at 96% 70%, rgba(217,180,92,0.42) 0 1.5px, transparent 2px);
+.d-gaidai-ja {
+  writing-mode: vertical-rl; font-size: 62px; font-weight: 500; letter-spacing: 0.16em;
+  color: #241D13;
 }
-.d-lamp {
-  position: absolute; right: 2%; top: 50%; width: 52%; height: 150%; transform: translateY(-50%);
-  background: radial-gradient(32% 30% at 50% 50%, rgba(255,199,92,0.13) 0%, rgba(218,138,50,0.04) 48%, rgba(0,0,0,0) 78%);
-  animation: d-breathe 7s ease-in-out infinite;
+.d-gaidai-en {
+  writing-mode: vertical-rl; text-orientation: upright;
+  font-size: 13px; letter-spacing: 0.34em; color: #7A6E58; margin-right: 12px; padding-top: 6px;
 }
-@keyframes d-breathe { 0%,100% { opacity: .78 } 50% { opacity: 1 } }
-.d-scroll { position: absolute; left: 64px; right: 64px; top: 92px; height: 510px; --span: 1112px; }
-.d-rod {
-  position: absolute; top: -18px; bottom: -18px; width: 20px; border-radius: 3px;
-  background: linear-gradient(90deg, #12100A 0%, #3E3220 26%, #6E5832 50%, #352B1B 78%, #100E09 100%);
+.d-gaidai-sub {
+  writing-mode: vertical-rl; font-size: 21px; letter-spacing: 0.2em; color: #3B3123;
+  margin-right: 26px; padding-top: 4px;
 }
-.d-rod::before, .d-rod::after {
-  content: ""; position: absolute; left: -5px; width: 30px; height: 15px; border-radius: 3px;
-  background: linear-gradient(160deg, #EBD79A, #A98A52 55%, #6B551F);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.55);
+.d-cover-meta {
+  writing-mode: vertical-rl; font-size: 15px; letter-spacing: 0.2em; color: #6E6353;
+  padding-top: 44px;
+  opacity: 0; animation: d-in .5s var(--d) ease-out forwards;
 }
-.d-rod::before { top: -7px; }
-.d-rod::after { bottom: -7px; }
-.d-rod-r { right: 0; box-shadow: -10px 0 26px rgba(0,0,0,0.6); }
-.d-rod-l {
-  left: var(--span); box-shadow: 10px 0 26px rgba(0,0,0,0.6); z-index: 3;
-  animation: d-roll 1.5s .25s cubic-bezier(.2,.78,.24,1) forwards;
+/* 表紙の落款だけは版面の左下へ。中の枚では詞書の足元に付く */
+.d-seal-cover { position: absolute; left: 46px; bottom: 34px; margin: 0; padding: 0; }
+</style>
+
+---
+title: 案四 巻物 / 予定は「間隔」で見る(絵が主)
+class: mk-scroll mk-d11
+transition: fade-out
+---
+
+<div class="d-grain"></div>
+<div class="d-lamp"></div>
+<div class="d-scroll">
+<div class="d-paper">
+<div class="d-fiber"></div>
+<div class="d-stain"></div>
+<div class="d-inner d-mode-art">
+<div class="d-cols">
+<div class="d-daisen">間 隔</div>
+<div class="d-col d-col-title" style="--d:0.60s"><h1>予定は「間隔」で見る</h1></div>
+<div class="d-col" style="--d:0.70s">知りたいのは予定と予定の「間」</div>
+</div>
+<div class="d-art">
+<div class="d-figpair">
+<div class="d-figbox d-figbox-still">
+<div class="d-fig d-fig-still"><img src="./public/media/still-timeline-rails.png" alt="三種のレール" /></div>
+<div class="d-figcap">図<span class="d-cap-no">一</span> ― 空き・連続・重複を色で</div>
+</div>
+<div class="d-figbox d-figbox-video">
+<div class="d-fig d-fig-video">
+<video autoplay muted loop playsinline>
+<source src="./public/media/demo-b-calendar-notification.mp4" type="video/mp4" />
+</video>
+</div>
+<div class="d-figcap">図<span class="d-cap-no">二</span> ― 触らずに立ち上がる。フォーカスは奪わない</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-rod d-rod-l"></div>
+<div class="d-rod d-rod-r"></div>
+</div>
+<div class="d-tag">案四 巻物 ― 絵が主</div>
+
+<style>
+/* 型の基盤は styles/index.css の .mk-scroll。ここは2枚の絵の配分だけ */
+/* 右(先に読む)が静止画D、左が動画B。絵巻の場面の進みと語りの順序を合わせた */
+/* width:0 + grow で「詞書の残り全部」を絵に渡す(内容幅で決まるのを避ける) */
+.mk-d11 .d-art { flex: 1 1 auto; width: 0; }
+/* 図の天を揃える。高さが違う2枚を中央で合わせると天がばらけて見える */
+.mk-d11 .d-figpair { align-items: flex-start; }
+.mk-d11 .d-figbox-still { flex: 0 0 272px; }
+.mk-d11 .d-fig-still { width: 100%; aspect-ratio: 300 / 236; }
+/* 静止画Dは830×390の横長。object-position で左の時系列側だけを見せる */
+.mk-d11 .d-fig-still img { object-position: left center; }
+.mk-d11 .d-figbox-video { flex: 1 1 auto; }
+.mk-d11 .d-fig-video { width: 100%; aspect-ratio: 1440 / 814; }
+.mk-d11 .d-figcap { font-size: 13px; }
+</style>
+
+---
+title: 案四 巻物 / 使い始め方(貼紙)
+class: mk-scroll mk-d12
+transition: fade-out
+---
+
+<div class="d-grain"></div>
+<div class="d-lamp"></div>
+<div class="d-scroll">
+<div class="d-paper">
+<div class="d-fiber"></div>
+<div class="d-stain"></div>
+<div class="d-inner d-mode-art">
+<div class="d-cols">
+<div class="d-daisen">使 い 始 め 方</div>
+<div class="d-col d-col-title" style="--d:0.60s"><h1>使い始め方</h1></div>
+<div class="d-col" style="--d:0.70s"><span class="d-no">一</span>入れて、開くだけ<em>Homebrew の cask</em></div>
+<div class="d-col" style="--d:0.78s"><span class="d-no">二</span>設定は TOML 一枚<em>触らなくても動く</em></div>
+</div>
+<div class="d-art">
+<div class="d-figbox d-figbox-paste">
+<div class="d-paste d-paste-cmd">
+<pre class="d-cmd"><span class="d-prompt">$</span>brew install --cask tadashi-aikawa/tap/kokukoku</pre>
+<pre class="d-cmd"><span class="d-prompt">$</span>open -a KOKUKOKU</pre>
+</div>
+<div class="d-paste d-paste-conf">
+<div class="d-paste-note">~/.config/kokukoku/config.toml</div>
+</div>
+<div class="d-figcap">貼紙 ― 端末に二行、設定に一枚</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-rod d-rod-l"></div>
+<div class="d-rod d-rod-r"></div>
+</div>
+<div class="d-tag">案四 巻物 ― 貼紙</div>
+
+<style>
+/* 型の基盤は styles/index.css の .mk-scroll。ここは貼紙の寸法だけ */
+/* 縦組みに入らない横書き(コマンド)は、紙に貼った別紙として置く */
+.mk-d12 .d-art { flex: 1 1 auto; width: 0; }
+.mk-d12 .d-figbox-paste { flex: 0 0 auto; }
+.mk-d12 .d-paste-cmd { padding: 34px 36px 30px; }
+.mk-d12 .d-cmd { font-size: 19px; line-height: 2.3; }
+/* 2枚目の貼紙。傾きを逆に振って「別の紙を後から貼った」ことを見せる */
+.mk-d12 .d-paste-conf {
+  align-self: flex-start; margin: 24px 0 0 58px; padding: 16px 26px;
+  transform: rotate(0.7deg);
 }
-/* clip-path と同じメインスレッドの時計で動かすため transform ではなく left を使う */
-@keyframes d-roll { to { left: 0; } }
-.d-paper {
-  position: absolute; left: 20px; right: 20px; top: 14px; bottom: 14px;
-  isolation: isolate; overflow: hidden;
-  background:
-    repeating-linear-gradient(90deg, rgba(112,84,40,0) 0 78px, rgba(112,84,40,0.05) 104px, rgba(112,84,40,0) 132px),
-    radial-gradient(150% 130% at 84% 16%, #F1E6C9 0%, #E6D8B6 44%, #D8C69D 78%, #CBB78D 100%);
-  box-shadow:
-    inset 0 14px 24px -16px rgba(84,60,24,0.55), inset 0 -14px 24px -16px rgba(84,60,24,0.55),
-    0 26px 60px rgba(0,0,0,0.6);
-  clip-path: inset(0 0 0 100%);
-  animation: d-unroll 1.5s .25s cubic-bezier(.2,.78,.24,1) forwards;
+.mk-d12 .d-paste-note {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 15px; letter-spacing: 0.02em; color: #5E5443;
 }
-@keyframes d-unroll { to { clip-path: inset(0 0 0 0); } }
-.d-fiber {
-  position: absolute; inset: 0; pointer-events: none; opacity: .55;
-  background-image:
-    repeating-linear-gradient(94deg, rgba(120,96,52,0.055) 0 1px, transparent 1px 6px),
-    repeating-linear-gradient(3deg, rgba(120,96,52,0.04) 0 1px, transparent 1px 5px);
-}
-.d-stain {
-  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: .34;
-  background-image:
-    radial-gradient(ellipse 120px 60px at 11% 84%, rgba(150,112,52,0.3), transparent 70%),
-    radial-gradient(ellipse 90px 70px at 44% 8%, rgba(150,112,52,0.22), transparent 72%),
-    radial-gradient(ellipse 150px 80px at 92% 90%, rgba(150,112,52,0.26), transparent 74%);
-}
-.d-inner {
-  position: relative; height: 100%; padding: 38px 46px;
-  display: flex; flex-direction: row-reverse; align-items: stretch; justify-content: space-between;
-}
-.d-cols { display: flex; flex-direction: row-reverse; align-items: stretch; }
-.d-daisen {
-  align-self: flex-start; writing-mode: vertical-rl; margin: 2px 2px 0 34px;
-  background: #F0E7CF; border: 1px solid rgba(60,48,26,0.45); padding: 14px 5px;
-  font-size: 13px; letter-spacing: 0.24em; color: #4A4032;
-  box-shadow: 0 3px 7px rgba(90,66,28,0.2);
-  opacity: 0; animation: d-in .8s 1.5s ease-out forwards;
-}
-.d-col {
-  writing-mode: vertical-rl; height: 100%; color: #2C2419; font-size: 24px; line-height: 1.5;
-  letter-spacing: 0.08em; font-weight: 400;
-  opacity: 0; animation: d-in 1s var(--d) ease-out forwards;
-}
-.d-col + .d-col { border-right: 1px solid rgba(60,48,26,0.15); padding-right: 21px; margin-right: 21px; }
-.slidev-layout.mk-d9 .d-col-title h1 {
-  writing-mode: vertical-rl; font-size: 38px; font-weight: 500; letter-spacing: 0.13em;
-  color: #241D13; margin: 0; line-height: 1.2;
-}
-.d-no { display: inline-block; color: #B23F26; font-size: 19px; letter-spacing: 0; margin-inline-end: 18px; }
-.d-col em {
-  display: block; font-style: normal; font-size: 16px; color: #6E6353; letter-spacing: 0.06em;
-  margin-right: 6px;
-}
-.d-seal-col { align-self: flex-end; margin-right: 30px; padding-bottom: 6px; opacity: 0; animation: d-in .9s 2.6s ease-out forwards; }
-.d-seal {
-  display: grid; place-items: center; width: 54px; height: 54px;
-  writing-mode: vertical-rl; background: #C4432A; color: #F2E8CE;
-  font-size: 21px; letter-spacing: 0.08em; mix-blend-mode: multiply;
-  box-shadow: inset 0 0 0 1px rgba(242,232,206,0.5);
-}
-@keyframes d-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-.d-art {
-  flex: 0 0 520px; display: flex; flex-direction: column; justify-content: center;
-  opacity: 0; animation: d-in 1s 1.7s ease-out forwards;
-}
-.d-fig {
-  position: relative; width: 100%; aspect-ratio: 1440 / 800; overflow: hidden;
-  border: 1px solid rgba(44,36,25,0.75); outline: 1px solid rgba(44,36,25,0.2); outline-offset: 4px;
-  background: #100E0A; box-shadow: 0 14px 30px rgba(70,50,20,0.35);
-}
-.d-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.d-fast {
-  position: absolute; right: 10px; bottom: 8px; font-size: 13px; letter-spacing: 0.2em; color: #E4DAC4;
-  padding: 2px 8px 3px; background: rgba(10,9,7,0.55); backdrop-filter: blur(2px);
-}
-.d-figcap { margin-top: 16px; font-size: 14px; letter-spacing: 0.16em; color: #6E6353; text-align: center; }
-.d-tag { position: absolute; left: 64px; bottom: 34px; font-size: 13px; letter-spacing: 0.3em; color: #5C5340; }
 </style>

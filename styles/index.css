@@ -441,3 +441,390 @@
 .refer a {
   color: inherit;
 }
+
+/*
+ * ╭─────────────────────────────────────────────────────────╮
+ * │           案四「巻物」― 型の基盤(mk-scroll)            │
+ * ╰─────────────────────────────────────────────────────────╯
+ * スライド内の <style> は1枚ごとにスコープされるため、
+ * 枚をまたいで共有する型はここに置く。
+ *
+ * 使い方
+ *   frontmatter に `class: mk-scroll`
+ *   .d-inner に変奏クラスを1つ足す
+ *     .d-mode-text … 詞書が主(5〜6列 + 小さめの絵)
+ *     .d-mode-art  … 絵が主(詞書2〜3列 + 大きな絵枠)
+ *   出の遅延は各要素に style="--d:0.70s" で渡す(shorthand の中の
+ *   未定義 var は宣言ごと無効になるので、必ず渡すこと)
+ */
+
+.slidev-layout.mk-scroll {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  color: #f8ecd8;
+  background: radial-gradient(120% 100% at 22% 18%, #171209 0%, #0a0806 66%);
+  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+
+/* 黒地の金泥と行灯 */
+.mk-scroll .d-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  background-image:
+    radial-gradient(circle at 9% 82%, rgba(217, 180, 92, 0.5) 0 1.4px, transparent 1.9px),
+    radial-gradient(circle at 21% 12%, rgba(217, 180, 92, 0.42) 0 1.8px, transparent 2.3px),
+    radial-gradient(circle at 74% 92%, rgba(217, 180, 92, 0.45) 0 1.1px, transparent 1.6px),
+    radial-gradient(circle at 90% 22%, rgba(217, 180, 92, 0.4) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 52% 6%, rgba(217, 180, 92, 0.36) 0 1.3px, transparent 1.8px),
+    radial-gradient(circle at 96% 70%, rgba(217, 180, 92, 0.42) 0 1.5px, transparent 2px);
+}
+.mk-scroll .d-lamp {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  width: 52%;
+  height: 150%;
+  transform: translateY(-50%);
+  background: radial-gradient(
+    32% 30% at 50% 50%,
+    rgba(255, 199, 92, 0.13) 0%,
+    rgba(218, 138, 50, 0.04) 48%,
+    rgba(0, 0, 0, 0) 78%
+  );
+  animation: d-breathe 7s ease-in-out infinite;
+}
+@keyframes d-breathe {
+  0%,
+  100% {
+    opacity: 0.78;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 巻物本体。天地は軸頭まで含めて上下35pxずつの余白に収まる */
+.mk-scroll .d-scroll {
+  position: absolute;
+  left: 64px;
+  right: 64px;
+  top: 60px;
+  height: 600px;
+  --span: 1112px;
+}
+.mk-scroll .d-rod {
+  position: absolute;
+  top: -18px;
+  bottom: -18px;
+  width: 20px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #12100a 0%, #3e3220 26%, #6e5832 50%, #352b1b 78%, #100e09 100%);
+}
+.mk-scroll .d-rod::before,
+.mk-scroll .d-rod::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  width: 30px;
+  height: 15px;
+  border-radius: 3px;
+  background: linear-gradient(160deg, #ebd79a, #a98a52 55%, #6b551f);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+.mk-scroll .d-rod::before {
+  top: -7px;
+}
+.mk-scroll .d-rod::after {
+  bottom: -7px;
+}
+.mk-scroll .d-rod-r {
+  right: 0;
+  box-shadow: -10px 0 26px rgba(0, 0, 0, 0.6);
+}
+.mk-scroll .d-rod-l {
+  left: var(--span);
+  z-index: 3;
+  box-shadow: 10px 0 26px rgba(0, 0, 0, 0.6);
+  animation: d-roll 0.75s 0.1s cubic-bezier(0.2, 0.78, 0.24, 1) forwards;
+}
+/* clip-path と同じメインスレッドの時計で動かすため transform ではなく left を使う */
+@keyframes d-roll {
+  to {
+    left: 0;
+  }
+}
+.mk-scroll .d-paper {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 14px;
+  bottom: 14px;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(90deg, rgba(112, 84, 40, 0) 0 78px, rgba(112, 84, 40, 0.05) 104px, rgba(112, 84, 40, 0) 132px),
+    radial-gradient(150% 130% at 84% 16%, #f1e6c9 0%, #e6d8b6 44%, #d8c69d 78%, #cbb78d 100%);
+  box-shadow:
+    inset 0 14px 24px -16px rgba(84, 60, 24, 0.55),
+    inset 0 -14px 24px -16px rgba(84, 60, 24, 0.55),
+    0 26px 60px rgba(0, 0, 0, 0.6);
+  clip-path: inset(0 0 0 100%);
+  animation: d-unroll 0.75s 0.1s cubic-bezier(0.2, 0.78, 0.24, 1) forwards;
+}
+@keyframes d-unroll {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+.mk-scroll .d-fiber {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  background-image:
+    repeating-linear-gradient(94deg, rgba(120, 96, 52, 0.055) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(3deg, rgba(120, 96, 52, 0.04) 0 1px, transparent 1px 5px);
+}
+.mk-scroll .d-stain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.34;
+  background-image:
+    radial-gradient(ellipse 120px 60px at 11% 84%, rgba(150, 112, 52, 0.3), transparent 70%),
+    radial-gradient(ellipse 90px 70px at 44% 8%, rgba(150, 112, 52, 0.22), transparent 72%),
+    radial-gradient(ellipse 150px 80px at 92% 90%, rgba(150, 112, 52, 0.26), transparent 74%);
+}
+
+/* 版面。row-reverse なので DOM 順がそのまま右→左の読み順になる */
+.mk-scroll .d-inner {
+  position: relative;
+  height: 100%;
+  padding: 34px 46px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.mk-scroll .d-cols {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+}
+.mk-scroll .d-mode-art .d-cols {
+  flex: 0 0 auto;
+}
+
+/* 題箋(だいせん)。枚をまたぐ走り出しの見出しを兼ねる */
+.mk-scroll .d-daisen {
+  align-self: flex-start;
+  writing-mode: vertical-rl;
+  margin: 2px 2px 0 34px;
+  padding: 14px 5px;
+  background: #f0e7cf;
+  border: 1px solid rgba(60, 48, 26, 0.45);
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  color: #4a4032;
+  box-shadow: 0 3px 7px rgba(90, 66, 28, 0.2);
+  opacity: 0;
+  animation: d-in 0.42s 0.58s ease-out forwards;
+}
+
+/* 詞書の列。界線は次の兄弟(=左隣)の右辺で引く */
+.mk-scroll .d-col {
+  writing-mode: vertical-rl;
+  height: 100%;
+  color: #2c2419;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  opacity: 0;
+  animation: d-in 0.45s var(--d) ease-out forwards;
+}
+.mk-scroll .d-col + .d-col {
+  border-right: 1px solid rgba(60, 48, 26, 0.15);
+  padding-right: 21px;
+  margin-right: 21px;
+}
+.mk-scroll .d-col-title h1 {
+  writing-mode: vertical-rl;
+  margin: 0;
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  line-height: 1.2;
+  color: #241d13;
+}
+.mk-scroll .d-no {
+  display: inline-block;
+  margin-inline-end: 18px;
+  color: #b23f26;
+  font-size: 19px;
+  letter-spacing: 0;
+}
+.mk-scroll .d-col em {
+  display: block;
+  margin-right: 6px;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: #6e6353;
+}
+.mk-scroll .d-col-close {
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  color: #6e6353;
+}
+
+/* 落款。捺すのは表紙と締めだけ。中の枚の朱は番号(一二三)と図番号が持つ */
+.mk-scroll .d-seal-col {
+  align-self: flex-end;
+  margin-right: 30px;
+  padding-bottom: 6px;
+  opacity: 0;
+  animation: d-in 0.36s 0.98s ease-out forwards;
+}
+.mk-scroll .d-seal {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  writing-mode: vertical-rl;
+  background: #c4432a;
+  color: #f2e8ce;
+  font-size: 21px;
+  letter-spacing: 0.08em;
+  mix-blend-mode: multiply;
+  box-shadow: inset 0 0 0 1px rgba(242, 232, 206, 0.5);
+}
+
+@keyframes d-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes d-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* 絵。詞書の左に置く */
+.mk-scroll .d-art {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mk-scroll .d-mode-art .d-art {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.mk-scroll .d-figbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  opacity: 0;
+  animation: d-in 0.5s 0.66s ease-out forwards;
+}
+.mk-scroll .d-figpair {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  width: 100%;
+  min-width: 0;
+  opacity: 0;
+  animation: d-in 0.5s 0.66s ease-out forwards;
+}
+.mk-scroll .d-fig {
+  position: relative;
+  overflow: hidden;
+  background: #100e0a;
+  border: 1px solid rgba(44, 36, 25, 0.75);
+  outline: 1px solid rgba(44, 36, 25, 0.2);
+  outline-offset: 4px;
+  box-shadow: 0 14px 30px rgba(70, 50, 20, 0.35);
+}
+.mk-scroll .d-fig video,
+.mk-scroll .d-fig img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.mk-scroll .d-fast {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  padding: 2px 8px 3px;
+  background: rgba(10, 9, 7, 0.55);
+  backdrop-filter: blur(2px);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: #e4dac4;
+}
+.mk-scroll .d-figcap {
+  margin-top: 14px;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  color: #6e6353;
+  text-align: center;
+}
+/* 図番号。番号のない「絵が主」の枚でも、朱の点を1つだけ残すための受け皿 */
+.mk-scroll .d-cap-no {
+  color: #b23f26;
+}
+
+/* 貼紙。縦組みに入らない横書き(コマンド等)を紙に貼って見せる */
+.mk-scroll .d-paste {
+  position: relative;
+  padding: 28px 32px 24px;
+  background: #f7f0dc;
+  border: 1px solid rgba(60, 48, 26, 0.35);
+  transform: rotate(-0.6deg);
+  box-shadow:
+    0 10px 22px rgba(90, 66, 28, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+.mk-scroll .d-cmd {
+  margin: 0;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 20px;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+  color: #2c2419;
+  white-space: nowrap;
+}
+.mk-scroll .d-prompt {
+  margin-right: 0.7em;
+  color: #b23f26;
+}
+
+/* 比較物であることを示す札。版面を邪魔しないよう左の黒地へ立てる */
+.mk-scroll .d-tag {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: #5c5340;
+}
