@@ -836,3 +836,697 @@
   letter-spacing: 0.3em;
   color: #5c5340;
 }
+
+/* KOKUKOKU LT 11枚版。巻物は静止させ、版面だけを切替時に出す。 */
+.slidev-layout.kk-lacquer {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  color: #e3c06e;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 44%, rgba(91, 58, 16, 0.28), transparent 68%),
+    linear-gradient(140deg, #16110a 0%, #060504 55%, #120d07 100%);
+  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+.kk-lacquer-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background:
+    radial-gradient(circle at 12% 17%, rgba(221, 181, 84, 0.35) 0 1px, transparent 2px),
+    radial-gradient(circle at 72% 13%, rgba(221, 181, 84, 0.26) 0 1.5px, transparent 2.2px),
+    radial-gradient(circle at 88% 77%, rgba(221, 181, 84, 0.3) 0 1px, transparent 2px),
+    radial-gradient(circle at 31% 88%, rgba(221, 181, 84, 0.22) 0 1.3px, transparent 2px);
+}
+
+.slidev-layout.kk-scroll .d-scroll {
+  --span: 1112px;
+}
+.slidev-layout.kk-scroll .d-rod-l {
+  left: 0;
+  animation: none;
+}
+.slidev-layout.kk-scroll .d-paper {
+  clip-path: inset(0);
+  animation: none;
+}
+.slidev-layout.kk-scroll .kk-content {
+  opacity: 0;
+  animation: kk-content-in 0.48s 0.08s ease-out forwards;
+}
+@keyframes kk-content-in {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.slidev-layout.kk-scroll .kk-inner {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 28px 42px 30px;
+}
+.slidev-layout.kk-scroll .kk-title {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #251d12;
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.slidev-layout.kk-scroll .kk-page-number {
+  top: 18px;
+  right: 3px;
+  width: 57px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-align: right;
+  white-space: nowrap;
+  opacity: 0.82;
+}
+
+/* 1. 表紙 */
+.kk-opening-copy {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #e0ba62;
+  text-align: center;
+  text-shadow: 0 0 24px rgba(220, 171, 63, 0.2);
+  opacity: 0;
+  animation: kk-opening-in 0.7s 0.08s ease-out forwards;
+}
+@keyframes kk-opening-in {
+  from { opacity: 0; transform: scale(0.985); }
+  to { opacity: 1; transform: scale(1); }
+}
+.kk-opening-ja {
+  font-size: 118px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.24em;
+  text-indent: 0.24em;
+}
+.kk-opening-en {
+  font-size: 34px;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+}
+
+/* 2. 三つの時間 */
+.kk-time-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 920px;
+  margin-top: 36px;
+}
+.kk-time-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 270px;
+  background: rgba(248, 240, 217, 0.68);
+  border: 2px solid rgba(70, 52, 25, 0.32);
+  box-shadow: 0 12px 25px rgba(92, 67, 29, 0.17);
+}
+.kk-time-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 34px;
+  right: 34px;
+  height: 5px;
+  background: #b23f26;
+}
+.kk-time-card strong {
+  color: #2a2115;
+  font-size: 68px;
+  font-weight: 500;
+  line-height: 1;
+}
+.kk-time-card span {
+  margin-top: 30px;
+  color: #6b5d48;
+  font-size: 30px;
+  letter-spacing: 0.16em;
+}
+.kk-statement {
+  margin-top: 30px;
+  color: #34291c;
+  font-size: 32px;
+  letter-spacing: 0.11em;
+}
+
+/* 3. HTML/CSS時計と実パネル動画を9秒で同期 */
+.kk-sync .kk-title {
+  font-size: 50px;
+}
+.kk-sync-stage {
+  display: grid;
+  grid-template-columns: 320px 560px;
+  align-items: center;
+  gap: 44px;
+  margin-top: 25px;
+}
+.kk-big-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.kk-clock-face {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border: 8px solid #393326;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 84px, rgba(60, 51, 35, 0.16) 85px 87px, transparent 88px),
+    repeating-conic-gradient(from -1deg, #514838 0 2deg, transparent 2deg 30deg),
+    #f5ecd3;
+  box-shadow: 0 13px 24px rgba(61, 43, 18, 0.2);
+}
+.kk-clock-face::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  background: #f5ecd3;
+  z-index: 0;
+}
+.kk-clock-hand {
+  position: absolute;
+  left: calc(50% - 3px);
+  bottom: 50%;
+  z-index: 2;
+  display: block;
+  width: 6px;
+  border-radius: 6px;
+  background: #2d2a23;
+  transform-origin: 50% 100%;
+}
+.kk-hour {
+  height: 64px;
+  animation: kk-hour-cycle 9s linear infinite;
+}
+.kk-minute {
+  height: 88px;
+  width: 4px;
+  left: calc(50% - 2px);
+  animation: kk-minute-cycle 9s linear infinite;
+}
+.kk-clock-pin {
+  position: absolute;
+  left: calc(50% - 7px);
+  top: calc(50% - 7px);
+  z-index: 3;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #b33f28;
+}
+@keyframes kk-hour-cycle {
+  0%, 33.333% { transform: rotate(285deg); }
+  37.222%, 66.667% { transform: rotate(297.5deg); }
+  70.556%, 92.222% { transform: rotate(300deg); }
+  96.111%, 100% { transform: rotate(285deg); }
+}
+@keyframes kk-minute-cycle {
+  0%, 33.333% { transform: rotate(180deg); }
+  37.222%, 66.667% { transform: rotate(330deg); }
+  70.556%, 92.222% { transform: rotate(360deg); }
+  96.111%, 100% { transform: rotate(180deg); }
+}
+.kk-clock-times {
+  position: relative;
+  width: 240px;
+  height: 55px;
+  margin-top: 13px;
+  color: #2b2419;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 44px;
+  font-weight: 600;
+  text-align: center;
+}
+.kk-clock-times span {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.kk-clock-times span:nth-child(1) { animation: kk-state-1 9s linear infinite; }
+.kk-clock-times span:nth-child(2) { animation: kk-state-2 9s linear infinite; }
+.kk-clock-times span:nth-child(3) { animation: kk-state-3 9s linear infinite; }
+.kk-triad-phase {
+  position: relative;
+  width: 280px;
+  height: 38px;
+  color: #84301f;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+.kk-triad-phase span {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.kk-triad-phase span:nth-child(1) { animation: kk-state-1 9s linear infinite; }
+.kk-triad-phase span:nth-child(2) { animation: kk-state-2 9s linear infinite; }
+.kk-triad-phase span:nth-child(3) { animation: kk-state-3 9s linear infinite; }
+.kk-sync .kk-hour,
+.kk-sync .kk-minute,
+.kk-sync .kk-clock-times span,
+.kk-sync .kk-triad-phase span {
+  animation: none;
+}
+.kk-triad-video {
+  position: relative;
+  width: 560px;
+  height: 396px;
+  overflow: hidden;
+  border: 2px solid #5a4c32;
+  border-radius: 12px;
+  background: radial-gradient(circle at 50% 42%, #40392d, #181713 74%);
+  box-shadow: 0 18px 34px rgba(52, 36, 15, 0.34);
+}
+.kk-triad-video video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.kk-sync-ui {
+  position: relative;
+  width: 650px;
+  height: 396px;
+  overflow: hidden;
+  border: 2px solid #5a4c32;
+  border-radius: 16px;
+  background: #171817;
+  box-shadow: 0 18px 34px rgba(52, 36, 15, 0.34);
+}
+.kk-sync-state {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  padding: 30px 34px 24px;
+  color: #f1ead8;
+  opacity: 0;
+}
+.kk-sync-state.kk-state-1 { animation: kk-state-1 9s infinite; }
+.kk-sync-state.kk-state-2 { animation: kk-state-2 9s infinite; }
+.kk-sync-state.kk-state-3 { animation: kk-state-3 9s infinite; }
+@keyframes kk-state-1 {
+  0%, 33.333% { opacity: 1; }
+  37.222%, 92.222% { opacity: 0; }
+  96.111%, 100% { opacity: 1; }
+}
+@keyframes kk-state-2 {
+  0%, 33.333% { opacity: 0; }
+  37.222%, 66.667% { opacity: 1; }
+  70.556%, 100% { opacity: 0; }
+}
+@keyframes kk-state-3 {
+  0%, 66.667% { opacity: 0; }
+  70.556%, 92.222% { opacity: 1; }
+  96.111%, 100% { opacity: 0; }
+}
+.kk-ui-head,
+.kk-ui-event,
+.kk-ui-track {
+  display: flex;
+  align-items: center;
+}
+.kk-ui-head {
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #4d493e;
+}
+.kk-ui-head span {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 42px;
+  letter-spacing: 0.04em;
+}
+.kk-ui-head b {
+  color: #e0b353;
+  font-size: 22px;
+  font-weight: 500;
+}
+.kk-ui-event {
+  gap: 24px;
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-left: 5px solid #7d735f;
+  background: #212321;
+}
+.kk-ui-event small {
+  color: #bdb39e;
+  font-size: 21px;
+}
+.kk-ui-event strong {
+  font-size: 25px;
+  font-weight: 500;
+}
+.kk-event-glow,
+.kk-event-active {
+  border-color: #e25c30;
+  box-shadow: 0 0 22px rgba(237, 91, 38, 0.7), inset 0 0 18px rgba(237, 91, 38, 0.12);
+}
+.kk-ui-track {
+  gap: 18px;
+  margin-top: 22px;
+  padding: 16px 20px;
+  border: 2px solid #dc7b37;
+  border-radius: 10px;
+  box-shadow: 0 0 18px rgba(239, 111, 40, 0.38);
+}
+.kk-ui-track span,
+.kk-ui-track strong,
+.kk-ui-track b {
+  font-size: 21px;
+}
+.kk-ui-track strong { flex: 1 1 auto; }
+.kk-ui-track b { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+.kk-ui-candle {
+  position: absolute;
+  right: 33px;
+  bottom: 52px;
+  width: 25px;
+  height: 72px;
+  border-radius: 3px 3px 2px 2px;
+  background: linear-gradient(90deg, #c6ad75, #fbebbd 52%, #b7975d);
+}
+.kk-ui-candle::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: -29px;
+  width: 15px;
+  height: 27px;
+  border-radius: 60% 42% 58% 44%;
+  background: #f5a32c;
+  box-shadow: 0 0 14px #f8a52f;
+}
+.kk-candle-mid { height: 51px; }
+.kk-candle-short { height: 29px; }
+.kk-state-label {
+  position: absolute;
+  left: 34px;
+  bottom: 26px;
+  color: #ddc99e;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+}
+
+/* 4・6・7. デモ動画 */
+.kk-video-frame {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #4d402b;
+  outline: 1px solid rgba(69, 51, 26, 0.25);
+  outline-offset: 5px;
+  background: radial-gradient(circle at 50% 42%, #40392d, #181713 74%);
+  box-shadow: 0 15px 30px rgba(64, 45, 20, 0.3);
+}
+.kk-video-frame video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.kk-video-frame-a {
+  width: 425px;
+  aspect-ratio: 864 / 896;
+  margin-top: 12px;
+}
+.kk-video-message {
+  margin-top: 12px;
+  color: #443624;
+  font-size: 30px;
+  letter-spacing: 0.14em;
+}
+.kk-video-b .kk-title { font-size: 50px; }
+.kk-video-frame-b {
+  width: 930px;
+  aspect-ratio: 2220 / 930;
+  margin-top: 24px;
+}
+.kk-dual-message {
+  display: flex;
+  gap: 44px;
+  align-items: baseline;
+  margin-top: 26px;
+  color: #34291c;
+}
+.kk-dual-message strong {
+  font-size: 31px;
+  font-weight: 500;
+}
+.kk-dual-message span {
+  color: #7b2f21;
+  font-size: 29px;
+}
+.kk-candle-life .kk-title { font-size: 50px; }
+.kk-candle-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  width: 100%;
+  margin-top: 18px;
+}
+.kk-video-frame-c {
+  width: 414px;
+  aspect-ratio: 864 / 944;
+}
+.kk-candle-copy {
+  display: flex;
+  flex-direction: column;
+  color: #2f2519;
+  letter-spacing: 0.12em;
+}
+.kk-candle-copy strong {
+  color: #a33825;
+  font-size: 48px;
+  font-weight: 500;
+}
+.kk-candle-copy span {
+  margin-top: 20px;
+  font-size: 36px;
+}
+
+/* 5. パネル解剖 */
+.kk-anatomy-stage {
+  position: relative;
+  width: 960px;
+  height: 450px;
+  margin-top: 18px;
+}
+.kk-panel-image {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 425px;
+  height: 446px;
+  transform: translateX(-50%);
+  object-fit: contain;
+  border: 2px solid #463a29;
+  box-shadow: 0 14px 26px rgba(60, 41, 18, 0.28);
+}
+.kk-callout {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  color: #30261a;
+  font-size: 31px;
+  letter-spacing: 0.1em;
+}
+.kk-callout span {
+  padding: 8px 15px;
+  border-bottom: 3px solid #ae3d28;
+  background: rgba(247, 239, 216, 0.88);
+}
+.kk-callout::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 145px;
+  height: 2px;
+  background: #ae3d28;
+}
+.kk-callout-clock { left: 4px; top: 32px; }
+.kk-callout-events { right: 4px; top: 142px; justify-content: flex-end; }
+.kk-callout-tracks { left: 4px; top: 257px; }
+.kk-callout-candle { right: 4px; top: 360px; justify-content: flex-end; }
+.kk-callout-clock::after,
+.kk-callout-tracks::after { left: 180px; }
+.kk-callout-events::after,
+.kk-callout-candle::after { right: 180px; }
+
+/* 8. 世界観 */
+.kk-playful .kk-title { font-size: 49px; }
+.kk-motif-stage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 23px;
+  width: 970px;
+  margin-top: 53px;
+}
+.kk-motif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 325px;
+  background: rgba(248, 240, 216, 0.72);
+  border: 2px solid rgba(65, 49, 26, 0.3);
+  box-shadow: 0 12px 24px rgba(77, 55, 24, 0.18);
+}
+.kk-motif:nth-child(even) { transform: translateY(18px) rotate(1deg); }
+.kk-motif:nth-child(odd) { transform: rotate(-1deg); }
+.kk-motif img {
+  width: 135px;
+  height: 150px;
+  object-fit: contain;
+}
+.kk-motif-soroban img {
+  filter: brightness(0) saturate(100%);
+  opacity: 0.8;
+}
+.kk-motif span {
+  margin-top: 28px;
+  color: #30261a;
+  font-size: 30px;
+  letter-spacing: 0.09em;
+}
+
+/* 9. 簪18弾 */
+.kk-kanzashi-story .kk-title { font-size: 48px; }
+.kk-story-message {
+  margin-top: 15px;
+  color: #9d3022;
+  font-size: 32px;
+  letter-spacing: 0.08em;
+}
+.kk-process-link.social-card {
+  display: grid;
+  grid-template-columns: 1fr 46px 1fr 46px 1fr;
+  align-items: center;
+  gap: 11px;
+  width: 960px;
+  margin-top: 20px;
+  color: inherit;
+  text-decoration: none;
+}
+.kk-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.kk-process-step img {
+  width: 274px;
+  height: 190px;
+  object-fit: cover;
+  border: 2px solid #4d402d;
+  background: #171817;
+  box-shadow: 0 10px 19px rgba(59, 42, 19, 0.26);
+}
+.kk-process-step strong {
+  margin-top: 12px;
+  color: #2d2418;
+  font-size: 29px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+.kk-process-arrow {
+  color: #ad3d28;
+  font-size: 37px;
+  text-align: center;
+}
+.kk-story-site {
+  margin-top: 4px;
+  color: #695b45;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+}
+
+/* 10. インストール */
+.kk-install-command {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  color: #efe4c9;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 28px;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  animation: kk-command-in 0.45s 0.08s ease-out forwards;
+}
+.kk-install-command span { color: #d5a94f; }
+@keyframes kk-command-in {
+  from { opacity: 0; transform: translate(-50%, calc(-50% + 7px)); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+.kk-dark-page-number {
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  color: #b89043;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+}
+
+/* 11. 締め */
+.slidev-layout.kk-closing .kk-closing-inner {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.kk-closing-title {
+  color: #281f14;
+  font-size: 62px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+}
+.kk-closing-name {
+  margin-top: 22px;
+  color: #6f5e43;
+  font-size: 28px;
+  letter-spacing: 0.24em;
+}
+.kk-repo-url {
+  position: absolute;
+  left: 50%;
+  bottom: 33px;
+  transform: translateX(-50%);
+  color: #5c503f;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 24px;
+  letter-spacing: 0.03em;
+}
+.kk-closing-logo {
+  position: absolute;
+  left: 28px;
+  bottom: 24px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
