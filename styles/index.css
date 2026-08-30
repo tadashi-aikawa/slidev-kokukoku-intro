@@ -458,6 +458,18 @@
   font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
 }
 
+.mk-scroll .d-page-number {
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  z-index: 20;
+  color: #ab8a55;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
 /* 黒地の金泥と行灯 */
 .mk-scroll .d-grain {
   position: absolute;
@@ -657,6 +669,11 @@
   margin-inline-end: 18px;
   color: #b23f26;
   font-size: 19px;
+  letter-spacing: 0;
+}
+.mk-scroll .d-upright {
+  display: inline-block;
+  text-orientation: upright;
   letter-spacing: 0;
 }
 .mk-scroll .d-col em {

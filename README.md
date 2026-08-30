@@ -14,7 +14,7 @@ bun mockup   # デザインの型の比較 mockup.md → http://localhost:3050
 
 | ファイル | 中身 |
 | --- | --- |
-| `slides.md` | 本編。承認用の試作3枚(表紙・困りごと・動画A) |
+| `slides.md` | 本編。確定骨子を実装した全9枚 |
 | `mockup.md` | 見た目の型の比較。承認が済むまでは残す |
 | `public/media/` | デモ動画A・B・C |
 | `public/fonts/` | 同梱フォント(下記) |
@@ -57,7 +57,7 @@ bun mockup   # デザインの型の比較 mockup.md → http://localhost:3050
 | `demo-b-calendar-notification-tight.mp4` | 動画Bの上下を詰めた本編用 | 2220×930 | 9.0秒 |
 | `demo-c-candle-burnout.mp4` | 和ろうそくの燃え尽き | 864×944 | 11.3秒 |
 
-**16:9ではない**ので、枠の `aspect-ratio` は各素材の実寸に合わせる。本編の動画Aは `SlidevVideo` の `autoplay="once" autoreset="slide"` で1回だけ再生し、再入場時に先頭へ戻す。
+**16:9ではない**ので、枠の `aspect-ratio` は各素材の実寸に合わせる。本編の動画A・B・Cは `SlidevVideo` の `autoplay="once" autoreset="slide"` で1回だけ再生し、再入場時に先頭へ戻す。
 
 markdownのHTMLから参照するときのパスは `./public/media/...`(`slides.md` のパス早見表に従う)。
 
