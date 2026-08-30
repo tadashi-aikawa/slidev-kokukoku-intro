@@ -104,7 +104,7 @@ class: mk-scroll kk-scroll kk-video-slide kk-video-b
       <source src="./public/media/demo-b-calendar-notification-tight.mp4" type="video/mp4" />
     </SlidevVideo>
   </div>
-  <div class="kk-dual-message"><strong>全面でリマンドしてくれる</strong><span>フォーカスは奪わない</span></div>
+  <div class="kk-dual-message"><strong>前面でリマンドしてくれる</strong><span>フォーカスは奪わない</span></div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
 <div class="d-page-number kk-page-number">6 / 11</div>
 
