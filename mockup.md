@@ -5,17 +5,16 @@ canvasWidth: 1280
 routerMode: hash
 transition: fade
 fonts:
-  sans: ["Zen Kaku Gothic New", "Noto Sans JP"]
-  serif: ["Shippori Mincho B1", "Zen Old Mincho"]
-  weights: "300,400,500,700"
-  provider: google
+  provider: none
+  sans: ["Hiragino Sans", "Noto Sans JP"]
+  serif: ["Zen Old Mincho", "Hiragino Mincho ProN"]
 class: mk-index
 ---
 
 <div class="idx">
 <div class="idx-kicker">KOKUKOKU 紹介LT(5分)</div>
-<h1>見た目の型・3案</h1>
-<p class="idx-lead">同じ2枚(2枚目「3つの困りごと」/ 6枚目「溶ける和ろうそく」)を、3つの型で作り分けました。<br/>違うのは <b>光の質</b> と <b>動きの量</b>。文章ではなく、めくって体感してください。</p>
+<h1>見た目の型・4案</h1>
+<p class="idx-lead">同じ2枚(2枚目「3つの困りごと」/ 6枚目「溶ける和ろうそく」)を、4つの型で作り分けました。<br/>違うのは <b>光の質</b> と <b>動きの量</b>。文章ではなく、めくって体感してください。</p>
 <div class="idx-grid">
 <div class="idx-card">
 <div class="idx-no">案 一</div>
@@ -23,7 +22,7 @@ class: mk-index
 <div class="idx-note">闇に一点の灯り。<b>静</b>。<br/>文字が主役で、動きは滲みだけ。</div>
 <div class="idx-page">p.2 / p.3</div>
 </div>
-<div class="idx-card">
+<div class="idx-card idx-card-picked">
 <div class="idx-no">案 二</div>
 <div class="idx-name">金屏風 <span>きんびょうぶ</span></div>
 <div class="idx-note">黒地に金と朱。<b>艶</b>。<br/>円相が描かれ、箔がきらめく。</div>
@@ -35,8 +34,14 @@ class: mk-index
 <div class="idx-note">プロダクトの文法そのまま。<b>動</b>。<br/>行が灯り、蝋燭が本当に溶ける。</div>
 <div class="idx-page">p.6 / p.7</div>
 </div>
+<div class="idx-card idx-card-new">
+<div class="idx-no">案 四</div>
+<div class="idx-name">巻物 <span>まきもの</span></div>
+<div class="idx-note">紙に墨と朱。<b>書</b>。<br/>横へ繰り出され、縦組みで読む。</div>
+<div class="idx-page">p.8 / p.9</div>
 </div>
-<div class="idx-foot">配分の提案:どれか1つを9枚すべてに敷くのが素直です。混ぜるなら<b>案一を地</b>にして、<b>表紙・7枚目・締めの3枚だけ案二</b>、<b>デモの3枚を案三</b>。3案とも黒地・同じ絵の具なので混ぜても喧嘩しません。</div>
+</div>
+<div class="idx-foot">案二を選定済み。<b>案四は案二と同じ絵の具・同じ書体</b>で、地を「黒」から「紙」へ裏返した派生です。混ぜるなら<b>案二を地</b>にして、<b>紙で語る枚(2・7枚目)だけ案四</b>。金は黒の世界、墨と朱は紙の世界と持ち場を分けてあるので、続けて出しても喧嘩しません。</div>
 </div>
 
 <style>
@@ -45,23 +50,30 @@ class: mk-index
   background: radial-gradient(120% 90% at 50% 0%, #17170F 0%, #0B0B09 62%);
   color: #F8ECD8;
   letter-spacing: 0.02em;
-  font-family: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+  font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
   display: flex; flex-direction: column;
 }
 .idx { display: flex; flex-direction: column; height: 100%; }
 .idx-kicker { font-size: 17px; letter-spacing: 0.34em; color: #AB8A55; }
 .slidev-layout.mk-index h1 {
-  font-family: "Shippori Mincho B1", "Hiragino Mincho ProN", serif;
+  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
   font-size: 48px; font-weight: 500; color: #F8ECD8; margin: 8px 0 14px; letter-spacing: 0.1em;
 }
 .idx-lead { font-size: 19px; line-height: 1.85; color: #C4B79E; margin: 0; }
 .idx-lead b { color: #E7C878; font-weight: 500; }
-.idx-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.idx-card { border: 1px solid #3A3428; border-top: 2px solid #AB8A55; padding: 18px 22px 16px; background: rgba(255,255,255,0.015); }
-.idx-no { font-family: "Shippori Mincho B1", serif; font-size: 15px; letter-spacing: 0.3em; color: #AB8A55; }
-.idx-name { font-family: "Shippori Mincho B1", "Hiragino Mincho ProN", serif; font-size: 31px; margin: 6px 0 12px; letter-spacing: 0.08em; }
-.idx-name span { font-size: 13px; color: #8A8069; letter-spacing: 0.2em; margin-left: 6px; }
-.idx-note { font-size: 16px; line-height: 1.8; color: #C4B79E; }
+.idx-grid { margin-top: 26px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.idx-card { position: relative; border: 1px solid #3A3428; border-top: 2px solid #AB8A55; padding: 16px 18px 14px; background: rgba(255,255,255,0.015); }
+.idx-card-picked { border-top-color: #D9B45C; background: rgba(217,180,92,0.05); }
+.idx-card-new { border-top-color: #D9B45C; background: rgba(217,180,92,0.05); }
+.idx-card-picked::after, .idx-card-new::after {
+  position: absolute; right: 14px; top: 12px; font-size: 11px; letter-spacing: 0.18em; color: #DA5932;
+}
+.idx-card-picked::after { content: "選定"; }
+.idx-card-new::after { content: "追加"; }
+.idx-no { font-family: "Zen Old Mincho", serif; font-size: 14px; letter-spacing: 0.3em; color: #AB8A55; }
+.idx-name { font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif; font-size: 28px; margin: 5px 0 10px; letter-spacing: 0.06em; }
+.idx-name span { display: block; font-size: 12px; color: #8A8069; letter-spacing: 0.2em; margin: 2px 0 0; }
+.idx-note { font-size: 15px; line-height: 1.75; color: #C4B79E; }
 .idx-note b { color: #E7C878; font-weight: 500; }
 .idx-page { margin-top: 12px; font-size: 14px; color: #DA5932; letter-spacing: 0.14em; }
 .idx-foot { margin-top: auto; font-size: 15px; line-height: 1.9; color: #8A8069; border-top: 1px solid #26241C; padding-top: 14px; }
@@ -356,10 +368,12 @@ transition: fade-out
 <div class="b-frame">
 <span class="b-nail b-nail-tl"></span><span class="b-nail b-nail-tr"></span>
 <span class="b-nail b-nail-bl"></span><span class="b-nail b-nail-br"></span>
-<div class="b-ph">動画C<span>約10秒</span></div>
+<video class="b-video" autoplay muted loop playsinline>
+<source src="./public/media/demo-c-candle-burnout.mp4" type="video/mp4" />
+</video>
 <div class="b-fast">早回し</div>
 </div>
-<div class="b-cap">パネル下部・和ろうそくの拡大</div>
+<div class="b-cap">動画C ― 燃え尽きて、また灯るまで</div>
 </div>
 </div>
 <div class="b-tag">案二 金屏風</div>
@@ -420,7 +434,7 @@ transition: fade-out
 @keyframes b-slide { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes b-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .b-frame {
-  position: relative; aspect-ratio: 16 / 9; width: 100%;
+  position: relative; aspect-ratio: 1440 / 800; width: 100%;
   border: 2px solid transparent;
   background-image: linear-gradient(#100E0A, #100E0A), linear-gradient(150deg, #E8D28F, #8E7134 45%, #E8D28F 100%);
   background-origin: border-box; background-clip: padding-box, border-box;
@@ -430,10 +444,11 @@ transition: fade-out
 .b-nail { position: absolute; width: 7px; height: 7px; background: #E8D28F; border-radius: 50%; box-shadow: 0 0 8px rgba(232,210,143,0.6); }
 .b-nail-tl { left: 8px; top: 8px } .b-nail-tr { right: 8px; top: 8px }
 .b-nail-bl { left: 8px; bottom: 8px } .b-nail-br { right: 8px; bottom: 8px }
-.b-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-  font-size: 22px; letter-spacing: 0.3em; color: #7A6D4E; }
-.b-ph span { font-size: 14px; letter-spacing: 0.24em; color: #574E38; }
-.b-fast { position: absolute; right: 14px; bottom: 12px; font-size: 13px; letter-spacing: 0.2em; color: #C4B79E; }
+.b-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.b-fast {
+  position: absolute; right: 12px; bottom: 10px; font-size: 13px; letter-spacing: 0.2em; color: #E4DAC4;
+  padding: 2px 8px 3px; background: rgba(10,9,7,0.55); backdrop-filter: blur(2px);
+}
 .b-cap { margin-top: 14px; font-size: 14px; letter-spacing: 0.2em; color: #5C5340; text-align: right;
   opacity: 0; animation: b-in 1s 1.45s ease-out forwards; }
 .b-tag { position: absolute; left: 88px; bottom: 34px; font-size: 13px; letter-spacing: 0.3em; color: #5C5340; }
@@ -630,4 +645,338 @@ transition: slide-up
   opacity: 0; animation: c-in .5s var(--d) ease-out forwards; }
 .c-p b { color: #FFC98A; font-weight: 700; }
 .c-tag { position: absolute; left: 84px; bottom: 28px; font-size: 13px; letter-spacing: 0.3em; color: #4F4A3C; }
+</style>
+
+---
+title: 案四 巻物 / 三つの困りごと
+class: mk-d8
+transition: fade-out
+---
+
+<div class="d-grain"></div>
+<div class="d-lamp"></div>
+<div class="d-scroll">
+<div class="d-paper">
+<div class="d-fiber"></div>
+<div class="d-stain"></div>
+<div class="d-inner">
+<div class="d-cols">
+<div class="d-daisen">困 り ご と</div>
+<div class="d-col d-col-title" style="--d:1.5s"><h1>三つの困りごと</h1></div>
+<div class="d-col" style="--d:1.75s"><span class="d-no">一</span>何に時間を使ったか分からない</div>
+<div class="d-col" style="--d:1.95s"><span class="d-no">二</span>次の予定まで、あと何分か<em>知りたいのは予定と予定の「間」</em></div>
+<div class="d-col" style="--d:2.15s"><span class="d-no">三</span>集中すると休憩を忘れる</div>
+<div class="d-col d-col-close" style="--d:2.4s">いま何をするかの材料。ひとつのパネルに</div>
+<div class="d-seal-col"><span class="d-seal">刻々</span></div>
+</div>
+<div class="d-art">
+<svg class="d-clock" viewBox="0 0 240 240" aria-hidden="true">
+<circle class="d-ring" cx="120" cy="120" r="104" pathLength="100"/>
+<circle class="d-ring2" cx="120" cy="120" r="86"/>
+<g class="d-tick">
+<line x1="120" y1="26" x2="120" y2="40"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(30 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(60 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(90 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(120 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(150 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(180 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(210 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(240 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(270 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(300 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(330 120 120)"/>
+</g>
+<g class="d-hands">
+<line class="d-hand-h" x1="120" y1="120" x2="120" y2="66"/>
+<line class="d-hand-m" x1="120" y1="120" x2="120" y2="44"/>
+<circle class="d-pivot" cx="120" cy="120" r="4.5"/>
+</g>
+</svg>
+</div>
+</div>
+</div>
+<div class="d-rod d-rod-l"></div>
+<div class="d-rod d-rod-r"></div>
+</div>
+<div class="d-tag">案四 巻物</div>
+
+<style>
+.slidev-layout.mk-d8 {
+  padding: 0; color: #F8ECD8; overflow: hidden; position: relative;
+  background: radial-gradient(120% 100% at 22% 18%, #171209 0%, #0A0806 66%);
+  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+.d-grain {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.45;
+  background-image:
+    radial-gradient(circle at 9% 82%, rgba(217,180,92,0.5) 0 1.4px, transparent 1.9px),
+    radial-gradient(circle at 21% 12%, rgba(217,180,92,0.42) 0 1.8px, transparent 2.3px),
+    radial-gradient(circle at 74% 92%, rgba(217,180,92,0.45) 0 1.1px, transparent 1.6px),
+    radial-gradient(circle at 90% 22%, rgba(217,180,92,0.4) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 52% 6%, rgba(217,180,92,0.36) 0 1.3px, transparent 1.8px),
+    radial-gradient(circle at 96% 70%, rgba(217,180,92,0.42) 0 1.5px, transparent 2px);
+}
+.d-lamp {
+  position: absolute; right: 2%; top: 50%; width: 52%; height: 150%; transform: translateY(-50%);
+  background: radial-gradient(32% 30% at 50% 50%, rgba(255,199,92,0.13) 0%, rgba(218,138,50,0.04) 48%, rgba(0,0,0,0) 78%);
+  animation: d-breathe 7s ease-in-out infinite;
+}
+@keyframes d-breathe { 0%,100% { opacity: .78 } 50% { opacity: 1 } }
+.d-scroll { position: absolute; left: 64px; right: 64px; top: 92px; height: 510px; --span: 1112px; }
+.d-rod {
+  position: absolute; top: -18px; bottom: -18px; width: 20px; border-radius: 3px;
+  background: linear-gradient(90deg, #12100A 0%, #3E3220 26%, #6E5832 50%, #352B1B 78%, #100E09 100%);
+}
+.d-rod::before, .d-rod::after {
+  content: ""; position: absolute; left: -5px; width: 30px; height: 15px; border-radius: 3px;
+  background: linear-gradient(160deg, #EBD79A, #A98A52 55%, #6B551F);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.55);
+}
+.d-rod::before { top: -7px; }
+.d-rod::after { bottom: -7px; }
+.d-rod-r { right: 0; box-shadow: -10px 0 26px rgba(0,0,0,0.6); }
+.d-rod-l {
+  left: var(--span); box-shadow: 10px 0 26px rgba(0,0,0,0.6); z-index: 3;
+  animation: d-roll 1.5s .25s cubic-bezier(.2,.78,.24,1) forwards;
+}
+/* clip-path と同じメインスレッドの時計で動かすため transform ではなく left を使う */
+@keyframes d-roll { to { left: 0; } }
+.d-paper {
+  position: absolute; left: 20px; right: 20px; top: 14px; bottom: 14px;
+  isolation: isolate; overflow: hidden;
+  background:
+    repeating-linear-gradient(90deg, rgba(112,84,40,0) 0 78px, rgba(112,84,40,0.05) 104px, rgba(112,84,40,0) 132px),
+    radial-gradient(150% 130% at 84% 16%, #F1E6C9 0%, #E6D8B6 44%, #D8C69D 78%, #CBB78D 100%);
+  box-shadow:
+    inset 0 14px 24px -16px rgba(84,60,24,0.55), inset 0 -14px 24px -16px rgba(84,60,24,0.55),
+    0 26px 60px rgba(0,0,0,0.6);
+  clip-path: inset(0 0 0 100%);
+  animation: d-unroll 1.5s .25s cubic-bezier(.2,.78,.24,1) forwards;
+}
+@keyframes d-unroll { to { clip-path: inset(0 0 0 0); } }
+.d-fiber {
+  position: absolute; inset: 0; pointer-events: none; opacity: .55;
+  background-image:
+    repeating-linear-gradient(94deg, rgba(120,96,52,0.055) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(3deg, rgba(120,96,52,0.04) 0 1px, transparent 1px 5px);
+}
+.d-stain {
+  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: .34;
+  background-image:
+    radial-gradient(ellipse 120px 60px at 11% 84%, rgba(150,112,52,0.3), transparent 70%),
+    radial-gradient(ellipse 90px 70px at 44% 8%, rgba(150,112,52,0.22), transparent 72%),
+    radial-gradient(ellipse 150px 80px at 92% 90%, rgba(150,112,52,0.26), transparent 74%);
+}
+.d-inner {
+  position: relative; height: 100%; padding: 38px 46px;
+  display: flex; flex-direction: row-reverse; align-items: stretch; justify-content: space-between;
+}
+.d-cols { display: flex; flex-direction: row-reverse; align-items: stretch; }
+.d-daisen {
+  align-self: flex-start; writing-mode: vertical-rl; margin: 2px 2px 0 34px;
+  background: #F0E7CF; border: 1px solid rgba(60,48,26,0.45); padding: 14px 5px;
+  font-size: 13px; letter-spacing: 0.24em; color: #4A4032;
+  box-shadow: 0 3px 7px rgba(90,66,28,0.2);
+  opacity: 0; animation: d-in .8s 1.5s ease-out forwards;
+}
+.d-col {
+  writing-mode: vertical-rl; height: 100%; color: #2C2419; font-size: 24px; line-height: 1.5;
+  letter-spacing: 0.08em; font-weight: 400;
+  opacity: 0; animation: d-in 1s var(--d) ease-out forwards;
+}
+.d-col + .d-col { border-right: 1px solid rgba(60,48,26,0.15); padding-right: 21px; margin-right: 21px; }
+.slidev-layout.mk-d8 .d-col-title h1 {
+  writing-mode: vertical-rl; font-size: 38px; font-weight: 500; letter-spacing: 0.13em;
+  color: #241D13; margin: 0; line-height: 1.2;
+}
+.d-no { display: inline-block; color: #B23F26; font-size: 19px; letter-spacing: 0; margin-inline-end: 18px; }
+.d-col em {
+  display: block; font-style: normal; font-size: 16px; color: #6E6353; letter-spacing: 0.06em;
+  margin-right: 6px;
+}
+.d-col-close { font-size: 17px; color: #6E6353; letter-spacing: 0.12em; }
+.d-seal-col { align-self: flex-end; margin-right: 30px; padding-bottom: 6px; opacity: 0; animation: d-in .9s 2.6s ease-out forwards; }
+.d-seal {
+  display: grid; place-items: center; width: 54px; height: 54px;
+  writing-mode: vertical-rl; background: #C4432A; color: #F2E8CE;
+  font-size: 21px; letter-spacing: 0.08em; mix-blend-mode: multiply;
+  box-shadow: inset 0 0 0 1px rgba(242,232,206,0.5);
+}
+@keyframes d-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.d-art { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; }
+.d-clock { width: 288px; height: 288px; fill: none; }
+.d-ring {
+  stroke: #2C2419; stroke-width: 2.6; stroke-linecap: round; opacity: .82;
+  stroke-dasharray: 100 100; stroke-dashoffset: 100;
+  animation: d-draw 1.5s 1.6s cubic-bezier(.26,.7,.3,1) forwards;
+}
+@keyframes d-draw { to { stroke-dashoffset: 0; } }
+.d-ring2 { stroke: rgba(44,36,25,0.22); stroke-width: 1; opacity: 0; animation: d-fade .9s 2.5s ease-out forwards; }
+.d-tick line { stroke: rgba(44,36,25,0.5); stroke-width: 1.6; stroke-linecap: round; }
+.d-tick { opacity: 0; animation: d-fade .9s 2.6s ease-out forwards; }
+.d-hands { opacity: 0; animation: d-fade .9s 2.85s ease-out forwards; }
+@keyframes d-fade { to { opacity: 1; } }
+.d-hand-h { stroke: #2C2419; stroke-width: 4; stroke-linecap: round; transform-origin: 120px 120px; transform: rotate(-58deg); }
+.d-hand-m { stroke: #2C2419; stroke-width: 2.4; stroke-linecap: round; transform-origin: 120px 120px; animation: d-spin 24s linear infinite; }
+@keyframes d-spin { from { transform: rotate(58deg); } to { transform: rotate(418deg); } }
+.d-pivot { fill: #B23F26; stroke: none; }
+.d-tag { position: absolute; left: 64px; bottom: 34px; font-size: 13px; letter-spacing: 0.3em; color: #5C5340; }
+</style>
+
+---
+title: 案四 巻物 / 溶ける和ろうそく
+class: mk-d9
+transition: fade-out
+---
+
+<div class="d-grain"></div>
+<div class="d-lamp"></div>
+<div class="d-scroll">
+<div class="d-paper">
+<div class="d-fiber"></div>
+<div class="d-stain"></div>
+<div class="d-inner">
+<div class="d-cols">
+<div class="d-daisen">和 ろ う そ く</div>
+<div class="d-col d-col-title" style="--d:1.5s"><h1>溶ける和ろうそく</h1></div>
+<div class="d-col" style="--d:1.75s"><span class="d-no">一</span>溜まるバーではなく、減る蝋燭</div>
+<div class="d-col" style="--d:1.95s"><span class="d-no">二</span>満ちたら休め。バーは逆だった</div>
+<div class="d-col" style="--d:2.15s"><span class="d-no">三</span>数字は出さない<em>そろそろか否かだけ</em></div>
+<div class="d-seal-col"><span class="d-seal">刻々</span></div>
+</div>
+<div class="d-art">
+<div class="d-fig">
+<video class="d-video" autoplay muted loop playsinline>
+<source src="./public/media/demo-c-candle-burnout.mp4" type="video/mp4" />
+</video>
+<div class="d-fast">早回し</div>
+</div>
+<div class="d-figcap">図 ― 燃え尽きて、また灯るまで</div>
+</div>
+</div>
+</div>
+<div class="d-rod d-rod-l"></div>
+<div class="d-rod d-rod-r"></div>
+</div>
+<div class="d-tag">案四 巻物</div>
+
+<style>
+.slidev-layout.mk-d9 {
+  padding: 0; color: #F8ECD8; overflow: hidden; position: relative;
+  background: radial-gradient(120% 100% at 22% 18%, #171209 0%, #0A0806 66%);
+  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+.d-grain {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.45;
+  background-image:
+    radial-gradient(circle at 9% 82%, rgba(217,180,92,0.5) 0 1.4px, transparent 1.9px),
+    radial-gradient(circle at 21% 12%, rgba(217,180,92,0.42) 0 1.8px, transparent 2.3px),
+    radial-gradient(circle at 74% 92%, rgba(217,180,92,0.45) 0 1.1px, transparent 1.6px),
+    radial-gradient(circle at 90% 22%, rgba(217,180,92,0.4) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 52% 6%, rgba(217,180,92,0.36) 0 1.3px, transparent 1.8px),
+    radial-gradient(circle at 96% 70%, rgba(217,180,92,0.42) 0 1.5px, transparent 2px);
+}
+.d-lamp {
+  position: absolute; right: 2%; top: 50%; width: 52%; height: 150%; transform: translateY(-50%);
+  background: radial-gradient(32% 30% at 50% 50%, rgba(255,199,92,0.13) 0%, rgba(218,138,50,0.04) 48%, rgba(0,0,0,0) 78%);
+  animation: d-breathe 7s ease-in-out infinite;
+}
+@keyframes d-breathe { 0%,100% { opacity: .78 } 50% { opacity: 1 } }
+.d-scroll { position: absolute; left: 64px; right: 64px; top: 92px; height: 510px; --span: 1112px; }
+.d-rod {
+  position: absolute; top: -18px; bottom: -18px; width: 20px; border-radius: 3px;
+  background: linear-gradient(90deg, #12100A 0%, #3E3220 26%, #6E5832 50%, #352B1B 78%, #100E09 100%);
+}
+.d-rod::before, .d-rod::after {
+  content: ""; position: absolute; left: -5px; width: 30px; height: 15px; border-radius: 3px;
+  background: linear-gradient(160deg, #EBD79A, #A98A52 55%, #6B551F);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.55);
+}
+.d-rod::before { top: -7px; }
+.d-rod::after { bottom: -7px; }
+.d-rod-r { right: 0; box-shadow: -10px 0 26px rgba(0,0,0,0.6); }
+.d-rod-l {
+  left: var(--span); box-shadow: 10px 0 26px rgba(0,0,0,0.6); z-index: 3;
+  animation: d-roll 1.5s .25s cubic-bezier(.2,.78,.24,1) forwards;
+}
+/* clip-path と同じメインスレッドの時計で動かすため transform ではなく left を使う */
+@keyframes d-roll { to { left: 0; } }
+.d-paper {
+  position: absolute; left: 20px; right: 20px; top: 14px; bottom: 14px;
+  isolation: isolate; overflow: hidden;
+  background:
+    repeating-linear-gradient(90deg, rgba(112,84,40,0) 0 78px, rgba(112,84,40,0.05) 104px, rgba(112,84,40,0) 132px),
+    radial-gradient(150% 130% at 84% 16%, #F1E6C9 0%, #E6D8B6 44%, #D8C69D 78%, #CBB78D 100%);
+  box-shadow:
+    inset 0 14px 24px -16px rgba(84,60,24,0.55), inset 0 -14px 24px -16px rgba(84,60,24,0.55),
+    0 26px 60px rgba(0,0,0,0.6);
+  clip-path: inset(0 0 0 100%);
+  animation: d-unroll 1.5s .25s cubic-bezier(.2,.78,.24,1) forwards;
+}
+@keyframes d-unroll { to { clip-path: inset(0 0 0 0); } }
+.d-fiber {
+  position: absolute; inset: 0; pointer-events: none; opacity: .55;
+  background-image:
+    repeating-linear-gradient(94deg, rgba(120,96,52,0.055) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(3deg, rgba(120,96,52,0.04) 0 1px, transparent 1px 5px);
+}
+.d-stain {
+  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply; opacity: .34;
+  background-image:
+    radial-gradient(ellipse 120px 60px at 11% 84%, rgba(150,112,52,0.3), transparent 70%),
+    radial-gradient(ellipse 90px 70px at 44% 8%, rgba(150,112,52,0.22), transparent 72%),
+    radial-gradient(ellipse 150px 80px at 92% 90%, rgba(150,112,52,0.26), transparent 74%);
+}
+.d-inner {
+  position: relative; height: 100%; padding: 38px 46px;
+  display: flex; flex-direction: row-reverse; align-items: stretch; justify-content: space-between;
+}
+.d-cols { display: flex; flex-direction: row-reverse; align-items: stretch; }
+.d-daisen {
+  align-self: flex-start; writing-mode: vertical-rl; margin: 2px 2px 0 34px;
+  background: #F0E7CF; border: 1px solid rgba(60,48,26,0.45); padding: 14px 5px;
+  font-size: 13px; letter-spacing: 0.24em; color: #4A4032;
+  box-shadow: 0 3px 7px rgba(90,66,28,0.2);
+  opacity: 0; animation: d-in .8s 1.5s ease-out forwards;
+}
+.d-col {
+  writing-mode: vertical-rl; height: 100%; color: #2C2419; font-size: 24px; line-height: 1.5;
+  letter-spacing: 0.08em; font-weight: 400;
+  opacity: 0; animation: d-in 1s var(--d) ease-out forwards;
+}
+.d-col + .d-col { border-right: 1px solid rgba(60,48,26,0.15); padding-right: 21px; margin-right: 21px; }
+.slidev-layout.mk-d9 .d-col-title h1 {
+  writing-mode: vertical-rl; font-size: 38px; font-weight: 500; letter-spacing: 0.13em;
+  color: #241D13; margin: 0; line-height: 1.2;
+}
+.d-no { display: inline-block; color: #B23F26; font-size: 19px; letter-spacing: 0; margin-inline-end: 18px; }
+.d-col em {
+  display: block; font-style: normal; font-size: 16px; color: #6E6353; letter-spacing: 0.06em;
+  margin-right: 6px;
+}
+.d-seal-col { align-self: flex-end; margin-right: 30px; padding-bottom: 6px; opacity: 0; animation: d-in .9s 2.6s ease-out forwards; }
+.d-seal {
+  display: grid; place-items: center; width: 54px; height: 54px;
+  writing-mode: vertical-rl; background: #C4432A; color: #F2E8CE;
+  font-size: 21px; letter-spacing: 0.08em; mix-blend-mode: multiply;
+  box-shadow: inset 0 0 0 1px rgba(242,232,206,0.5);
+}
+@keyframes d-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.d-art {
+  flex: 0 0 520px; display: flex; flex-direction: column; justify-content: center;
+  opacity: 0; animation: d-in 1s 1.7s ease-out forwards;
+}
+.d-fig {
+  position: relative; width: 100%; aspect-ratio: 1440 / 800; overflow: hidden;
+  border: 1px solid rgba(44,36,25,0.75); outline: 1px solid rgba(44,36,25,0.2); outline-offset: 4px;
+  background: #100E0A; box-shadow: 0 14px 30px rgba(70,50,20,0.35);
+}
+.d-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.d-fast {
+  position: absolute; right: 10px; bottom: 8px; font-size: 13px; letter-spacing: 0.2em; color: #E4DAC4;
+  padding: 2px 8px 3px; background: rgba(10,9,7,0.55); backdrop-filter: blur(2px);
+}
+.d-figcap { margin-top: 16px; font-size: 14px; letter-spacing: 0.16em; color: #6E6353; text-align: center; }
+.d-tag { position: absolute; left: 64px; bottom: 34px; font-size: 13px; letter-spacing: 0.3em; color: #5C5340; }
 </style>

@@ -1,6 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
 @import "https://www.nerdfonts.com/assets/css/webfont.css";
 
+/* 同梱フォント(SIL OFL 1.1)。ライセンス全文は public/fonts/ZenOldMincho-OFL.txt */
+@font-face {
+  font-family: "Zen Old Mincho";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/fonts/ZenOldMincho-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Zen Old Mincho";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url("/fonts/ZenOldMincho-Medium.woff2") format("woff2");
+}
+
 :root {
   --color-primary: #3db680;
   --color-secondary: #ce579b;
