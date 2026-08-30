@@ -59,9 +59,7 @@ class: mk-scroll kk-scroll kk-video-slide kk-video-a
 <div class="d-inner kk-inner kk-content">
   <div class="kk-side-demo">
     <div class="kk-video-frame kk-video-frame-a">
-      <SlidevVideo autoplay loop muted playsinline>
-        <source src="./public/media/demo-a-invoke-and-track-tight.mp4" type="video/mp4" />
-      </SlidevVideo>
+      <ClickToLoopVideo src="/media/demo-a-invoke-and-track-tight.mp4" :preview-time="0.2" />
     </div>
     <div class="kk-vertical-copy kk-invoke-copy" aria-label="呼び出して計測する操作">
       <div class="kk-vertical-line kk-vertical-lead">ホットキーで呼び出す</div>
@@ -100,9 +98,7 @@ class: mk-scroll kk-scroll kk-video-slide kk-video-b
 <div class="d-inner kk-inner kk-content">
   <h1 class="kk-title">予定が近づくと</h1>
   <div class="kk-video-frame kk-video-frame-b">
-    <SlidevVideo autoplay loop muted playsinline>
-      <source src="./public/media/demo-b-calendar-notification-tight.mp4" type="video/mp4" />
-    </SlidevVideo>
+    <ClickToLoopVideo src="/media/demo-b-calendar-notification-tight.mp4" />
   </div>
   <div class="kk-dual-message"><strong>前面でリマンドしてくれる</strong><span>フォーカスは奪わない</span></div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
@@ -118,9 +114,7 @@ class: mk-scroll kk-scroll kk-candle-life
 <div class="d-inner kk-inner kk-content">
   <div class="kk-side-demo kk-candle-layout">
     <div class="kk-video-frame kk-video-frame-c">
-      <SlidevVideo autoplay loop muted playsinline>
-        <source src="./public/media/demo-c-candle-burnout.mp4" type="video/mp4" />
-      </SlidevVideo>
+      <ClickToLoopVideo src="/media/demo-c-candle-burnout.mp4" />
     </div>
     <div class="kk-vertical-copy kk-candle-copy" aria-label="ろうそくは集中のライフ。尽きたら休憩のサイン">
       <div class="kk-vertical-line kk-vertical-lead">ろうそくは集中のライフ</div>

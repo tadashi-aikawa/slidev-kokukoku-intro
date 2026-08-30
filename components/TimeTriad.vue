@@ -52,14 +52,14 @@ function updateFromVideo() {
   frameId = requestAnimationFrame(updateFromVideo)
 }
 
-function handlePlay(event: Event) {
-  videoElement = event.currentTarget as HTMLVideoElement
+function handlePlay(element: HTMLVideoElement) {
+  videoElement = element
   cancelAnimationFrame(frameId)
   updateFromVideo()
 }
 
-function handleTimeUpdate(event: Event) {
-  videoElement = event.currentTarget as HTMLVideoElement
+function handleTimeUpdate(element: HTMLVideoElement) {
+  videoElement = element
   currentTime.value = videoElement.currentTime
 }
 
@@ -90,17 +90,12 @@ onBeforeUnmount(() => cancelAnimationFrame(frameId))
       </div>
     </div>
     <div class="kk-triad-video">
-      <SlidevVideo
-        autoplay
-        loop
-        muted
-        playsinline
+      <ClickToLoopVideo
+        src="/media/demo-time-flow-panel.mp4"
         @play="handlePlay"
         @pause="handlePause"
         @timeupdate="handleTimeUpdate"
-      >
-        <source src="../public/media/demo-time-flow-panel.mp4" type="video/mp4" />
-      </SlidevVideo>
+      />
     </div>
   </div>
 </template>

@@ -42,8 +42,10 @@ async function startScroll() {
   if (currentRun !== runId) return
 
   const distance = Math.max(0, target.getBoundingClientRect().height - frame.clientHeight)
+  const startPosition = `translateY(-${Math.round(distance * 0.3)}px)`
+  const endPosition = `translateY(-${Math.round(distance * 0.5)}px)`
   target.style.transition = "none"
-  target.style.transform = "translateY(0)"
+  target.style.transform = startPosition
   target.style.opacity = "1"
   void target.offsetHeight
 
@@ -53,22 +55,9 @@ async function startScroll() {
       frameId = requestAnimationFrame(() => {
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
 
-        const position = (ratio: number) => `translateY(-${Math.round(distance * ratio)}px)`
         scrollAnimation = target.animate([
-          { offset: 0, transform: position(0), opacity: 1 },
-          { offset: 0.18, transform: position(0.035), opacity: 1 },
-          { offset: 0.2, transform: position(0.035), opacity: 0 },
-          { offset: 0.205, transform: position(0.32), opacity: 0 },
-          { offset: 0.225, transform: position(0.32), opacity: 1 },
-          { offset: 0.405, transform: position(0.355), opacity: 1 },
-          { offset: 0.425, transform: position(0.355), opacity: 0 },
-          { offset: 0.43, transform: position(0.72), opacity: 0 },
-          { offset: 0.45, transform: position(0.72), opacity: 1 },
-          { offset: 0.63, transform: position(0.755), opacity: 1 },
-          { offset: 0.65, transform: position(0.755), opacity: 0 },
-          { offset: 0.655, transform: position(0.92), opacity: 0 },
-          { offset: 0.675, transform: position(0.92), opacity: 1 },
-          { offset: 1, transform: position(1), opacity: 1 },
+          { transform: startPosition },
+          { transform: endPosition },
         ], {
           duration: 26000,
           easing: "linear",
