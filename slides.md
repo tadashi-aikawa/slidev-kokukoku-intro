@@ -280,13 +280,13 @@ class: mk-scroll kokukoku-anatomy
 <div class="d-cols">
 <div class="d-daisen">一 枚 の 中</div>
 <div class="d-col d-col-title" style="--d:0.60s"><h1>パネルの中身</h1></div>
-<div class="d-col" style="--d:0.70s"><span class="d-no">一</span>上から、計測・予定・和ろうそく</div>
-<div class="d-col" style="--d:0.78s"><span class="d-no">二</span>結果と予定は、日報へそのままコピー</div>
+<div class="d-col" style="--d:0.70s"><span class="d-no">一</span>時刻と予定・計測・和ろうそく</div>
+<div class="d-col" style="--d:0.78s"><span class="d-no">二</span>結果と予定は、箇条書きでコピー</div>
 </div>
 <div class="d-art">
 <div class="d-figbox">
 <div class="d-fig"><img src="./public/media/still-panel.png" alt="KOKUKOKUのパネル全体" /></div>
-<div class="d-figcap">図<span class="d-cap-no">一</span> ― 計測・今日の予定・連続作業を一枚に</div>
+<div class="d-figcap">図<span class="d-cap-no">一</span> ― 時刻・予定・計測・連続作業を一枚に</div>
 </div>
 </div>
 </div>
@@ -461,7 +461,7 @@ class: mk-scroll kokukoku-motifs
 <img src="./public/media/icon-clock.svg" alt="和紙の丸窓" />
 <div><b>和紙の丸窓</b><span>いまの時刻</span></div>
 </div>
-<div class="d-icon-note">図<span class="d-cap-no">一</span> ― パネルの和の意匠は、すべてコードで描いたSVG</div>
+<div class="d-icon-note">図<span class="d-cap-no">一</span> ― パネルの和の意匠は、画像に頼らずコードで描画</div>
 </div>
 </div>
 </div>
