@@ -58,9 +58,9 @@ bun mockup   # デザインの型の比較 mockup.md → http://localhost:3050
 | `demo-c-candle-burnout.mp4` | 和ろうそくの燃え尽き | 864×944 | 13.0秒 |
 | `demo-time-flow-panel.mp4` | 過去・今・未来が同期するパネル | 480×340 | 9.0秒 |
 
-**16:9ではない**ので、枠の `aspect-ratio` は各素材の実寸に合わせる。本編の動画は `SlidevVideo` の `autoplay loop muted playsinline` で繰り返し再生する。
+**16:9ではない**ので、枠の `aspect-ratio` は各素材の実寸に合わせる。本編の動画は `ClickToLoopVideo` で、クリック後に先頭から繰り返し再生する。
 
-markdownのHTMLから参照するときのパスは `./public/media/...`(`slides.md` のパス早見表に従う)。
+markdownのHTMLから直接参照するときのパスは `./public/media/...`、Vueコンポーネントのpropsへ渡すパスは `./media/...` とする。
 
 ## 同梱フォント(public/fonts/)
 

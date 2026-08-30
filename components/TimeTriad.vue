@@ -91,7 +91,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frameId))
     </div>
     <div class="kk-triad-video">
       <ClickToLoopVideo
-        src="/media/demo-time-flow-panel.mp4"
+        src="./media/demo-time-flow-panel.mp4"
         @play="handlePlay"
         @pause="handlePause"
         @timeupdate="handleTimeUpdate"

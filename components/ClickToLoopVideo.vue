@@ -20,9 +20,13 @@ const emit = defineEmits<{
 const video = ref<HTMLVideoElement | null>(null)
 const active = ref(false)
 const revealed = ref(false)
+const requestedPlayback = ref(false)
 const { clicks } = useNav()
+let playbackRun = 0
 
 function showPreview() {
+  playbackRun += 1
+  requestedPlayback.value = false
   const target = video.value
   if (!target) return
   target.pause()
@@ -31,12 +35,14 @@ function showPreview() {
 }
 
 function handleLoadedMetadata() {
-  if (clicks.value === 0) showPreview()
+  if (!requestedPlayback.value) showPreview()
 }
 
 async function playFromStart() {
   const target = video.value
   if (!target) return
+  const currentRun = ++playbackRun
+  requestedPlayback.value = true
   revealed.value = true
   await nextTick()
   target.pause()
@@ -45,7 +51,7 @@ async function playFromStart() {
     await target.play()
   }
   catch {
-    showPreview()
+    if (currentRun === playbackRun) showPreview()
   }
 }
 
@@ -55,10 +61,15 @@ watch(clicks, (current, previous) => {
   if (current === 0) showPreview()
 })
 
-onSlideEnter(async () => {
+onSlideEnter(async (to, from) => {
+  const enteredBackward = from !== undefined && from > to
   active.value = true
   await nextTick()
-  showPreview()
+  requestAnimationFrame(() => {
+    if (!active.value) return
+    if (enteredBackward || clicks.value > 0) void playFromStart()
+    else showPreview()
+  })
 })
 
 onSlideLeave(() => {

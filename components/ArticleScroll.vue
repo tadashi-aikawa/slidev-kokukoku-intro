@@ -69,7 +69,7 @@ watch(clicks, (current, previous) => {
 
 onSlideEnter(() => {
   active.value = true
-  void prepareScroll(false)
+  void prepareScroll(clicks.value > 0)
 })
 
 onSlideLeave(() => {
