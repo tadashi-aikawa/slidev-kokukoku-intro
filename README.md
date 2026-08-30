@@ -14,12 +14,12 @@ bun mockup   # デザインの型の比較 mockup.md → http://localhost:3050
 
 | ファイル | 中身 |
 | --- | --- |
-| `slides.md` | 本編。骨子(9枚)をもとに展開する |
-| `mockup.md` | 見た目の型の比較(4案 × 2枚)。**型が決まったら削除する** |
+| `slides.md` | 本編。承認用の試作3枚(表紙・困りごと・動画A) |
+| `mockup.md` | 見た目の型の比較。承認が済むまでは残す |
 | `public/media/` | デモ動画A・B・C |
 | `public/fonts/` | 同梱フォント(下記) |
 
-`mockup.md` は本編とは別ファイル・別ポートで動かす捨てる前提の比較物。選ばれなかった案は消すだけで戻せる。
+`mockup.md` は本編とは別ファイル・別ポートで動かす比較物。タダシの承認後に整理する。
 
 ## デザインの型(mockup.md)
 
@@ -52,10 +52,12 @@ bun mockup   # デザインの型の比較 mockup.md → http://localhost:3050
 | ファイル | 中身 | 寸法 | 尺 |
 | --- | --- | --- | --- |
 | `demo-a-invoke-and-track.mp4` | 呼び出して計測する | 1440×900 | 5.0秒 |
+| `demo-a-invoke-and-track-tight.mp4` | 動画Aの上下を詰めた本編用 | 864×896 | 4.0秒 |
 | `demo-b-calendar-notification.mp4` | カレンダー通知 | 1440×814 | 9.0秒 |
-| `demo-c-candle-burnout.mp4` | 和ろうそくの燃え尽き | 1440×800 | 11.3秒 |
+| `demo-b-calendar-notification-tight.mp4` | 動画Bの上下を詰めた本編用 | 2220×930 | 9.0秒 |
+| `demo-c-candle-burnout.mp4` | 和ろうそくの燃え尽き | 864×944 | 11.3秒 |
 
-**16:9ではない**ので、枠は `aspect-ratio: 1440 / 800` のように実寸で書く。音声なしなので `autoplay muted loop playsinline` で置く。
+**16:9ではない**ので、枠の `aspect-ratio` は各素材の実寸に合わせる。本編の動画Aは `SlidevVideo` の `autoplay="once" autoreset="slide"` で1回だけ再生し、再入場時に先頭へ戻す。
 
 markdownのHTMLから参照するときのパスは `./public/media/...`(`slides.md` のパス早見表に従う)。
 
@@ -69,7 +71,7 @@ markdownのHTMLから参照するときのパスは `./public/media/...`(`slides
 
 `mockup.md` のheadmatterは `provider: none` にしてあり、**選ばれた案二・案四はネットワークなしで正しく出る**。案一(Shippori Mincho B1)・案三(Zen Kaku Gothic New)は選外なので同梱せず、macOS同梱のヒラギノへフォールバックする。
 
-**本編を組むときの宿題**: `styles/index.css` の先頭に原本(slidev-sandbox)から引き継いだ外部 `@import`(Noto Sans JP / Nerd Fonts)が残っている。会場のネットワークが不安なら、本編の書体を決めるのと同時に外す。
+本編は同梱した Zen Old Mincho だけで表示し、外部フォントへ通信しない。
 
 ## PDF出力
 

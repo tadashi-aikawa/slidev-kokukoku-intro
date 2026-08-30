@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
-@import "https://www.nerdfonts.com/assets/css/webfont.css";
-
 /* 同梱フォント(SIL OFL 1.1)。ライセンス全文は public/fonts/ZenOldMincho-OFL.txt */
 @font-face {
   font-family: "Zen Old Mincho";
@@ -42,19 +39,13 @@
 
 .slidev-layout {
   padding: 1em 2em;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 35px;
   /* line-height: 1.35; */
   letter-spacing: 1.25px;
   color: var(--color-foreground);
-}
-
-.simple-cover {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-    url("/attachments/cover-bg.webp") !important;
 }
 
 /*
@@ -369,7 +360,7 @@
 .mermaid svg,
 .mermaid foreignObject,
 .mermaid .label {
-  font-family: "Noto Sans JP", sans-serif !important;
+  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif !important;
   letter-spacing: 0 !important;
 }
 .mermaid svg {

@@ -1,546 +1,264 @@
 ---
-title: Slidevのレイアウトベーススライド
-colorSchema: light
+title: KOKUKOKU — 刻一刻と時を見守る
+colorSchema: dark
 canvasWidth: 1280
-themeConfig:
-  primary: "#3db680"
-# chapter-divider レイアウトが表示する章立て
-chapters:
-  - メインレイアウトパターン
-  - コードブロック
-  - アニメーション
-  - "???"
-comark: true
-layout: cover
-# デフォルトのクリックアニメーション
-clickAnimation: fade-in
-# /index.html が必須の環境では /index.html#3 のような形式を許容させる
 routerMode: hash
-background: /attachments/cat-minerva.webp
-favicon: https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/favicon-64.png
-# cover-bg.webpを使うならコメントアウト解除 & backgroundを削除
-# class: simple-cover
+transition: fade-out
+fonts:
+  provider: none
+  sans: ["Zen Old Mincho", "Hiragino Mincho ProN"]
+  serif: ["Zen Old Mincho", "Hiragino Mincho ProN"]
+layout: cover
+class: mk-scroll kokukoku-cover
 ---
 
-# Slidevのレイアウトベーススライド
-
-<span class="text-dimmed">
-2026/03/08   Tadashi Aikawa
-</span>
-
----
-title: Agenda
-layout: chapter-divider
----
-
----
-title: Chapter1
-layout: chapter-divider
-activeChapter: 1
----
-
----
-
-# 普通のスライド
-
-ここに説明を書いたり。
-
-- 箇条書きを
-- 書いたり
-
----
-
-# 最後に結論を表示
-
-ここには
-
-- 普通の説明を
-- 書いたりして
-- クリックすると
-
-<conclusion>
-
-結論が表示される
-
-</conclusion>
-
----
-
-# 最後に結論をオーバーレイで表示
-
-ここには
-
-- 普通の説明を
-- 書いたりして
-- いるけど
-
-スライド全体を
-
-- ぎっしり使っていて
-- 領域がないときでも
-
-<conclusion v-click overlay>
-
-オーバーレイで中央に結論が表示される
-
-</conclusion>
-
----
-layout: fact
----
-
-# fact
-
-名言だったり、参考文献・グラフなどの事実を扱うときに使う。
-
-すべてが中央寄りになる。
-
-```ts
-const a = 1;
-const b = 2;
-// コードブロックには向かない。その場合は `layout: center` を使おう
-```
-
-<refer>
-
-出典の明記
-
-</refer>
-
----
-layout: center
----
-
-# center
-
-中央にコンテンツを表示したいときに使う。
-
-中央揃えではないので注意。
-
-```ts
-const a = 1;
-const b = 2;
-console.log(a + b);
-```
-
----
-layout: image
-image: /attachments/cat-minerva.webp
----
-
-# 画像を全面表示したい場合 (中心を軸に展開){.!text-white}
-
----
-layout: image
-image: /attachments/cat-minerva.webp
-backgroundSize: cover
-backgroundPosition: left top
----
-
-# 画像を全面表示したい場合 (起点を左上にあわせる){.!text-white}
-
----
-
-# 画像をトリミングしたい場合
-
-<div class="h-140 overflow-hidden">
-    <img src="./public/attachments/cat-minerva.webp" class="block" />
+<div class="d-grain"></div>
+<div class="d-lamp"></div>
+<div class="d-scroll">
+<div class="d-paper">
+<div class="d-fiber"></div>
+<div class="d-stain"></div>
+<div class="d-inner d-cover">
+<div class="d-cover-cols">
+<div class="d-gaidai">
+<span class="d-gaidai-ja">刻刻</span>
+<span class="d-gaidai-en">KOKUKOKU</span>
+<span class="d-gaidai-sub">刻一刻と時を見守る</span>
+</div>
+<div class="d-cover-meta" style="--d:0.76s">macOS 用・自作の常駐パネル</div>
+</div>
+<img class="d-cover-logo" src="./public/media/kokukoku.webp" alt="KOKUKOKU" />
+</div>
+</div>
+<div class="d-rod d-rod-l"></div>
+<div class="d-rod d-rod-r"></div>
 </div>
 
+<style>
+.kokukoku-cover .d-cover {
+  justify-content: center;
+  align-items: center;
+}
+.kokukoku-cover .d-cover-cols {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.kokukoku-cover .d-gaidai {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 196px;
+  height: 300px;
+  margin-left: 52px;
+  padding: 30px 20px 0;
+  background: #f5edd7;
+  border: 1px solid rgba(60, 48, 26, 0.5);
+  box-shadow:
+    0 6px 16px rgba(90, 66, 28, 0.22),
+    inset 0 0 0 5px #f5edd7,
+    inset 0 0 0 6px rgba(60, 48, 26, 0.28);
+  opacity: 0;
+  animation: d-in 0.5s 0.56s ease-out forwards;
+}
+.kokukoku-cover .d-gaidai-ja {
+  writing-mode: vertical-rl;
+  font-size: 62px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: #241d13;
+}
+.kokukoku-cover .d-gaidai-en {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin-right: 12px;
+  padding-top: 6px;
+  font-size: 13px;
+  letter-spacing: 0.34em;
+  color: #7a6e58;
+}
+.kokukoku-cover .d-gaidai-sub {
+  writing-mode: vertical-rl;
+  margin-right: 26px;
+  padding-top: 4px;
+  font-size: 21px;
+  letter-spacing: 0.2em;
+  color: #3b3123;
+}
+.kokukoku-cover .d-cover-meta {
+  writing-mode: vertical-rl;
+  padding-top: 44px;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: #6e6353;
+  opacity: 0;
+  animation: d-in 0.5s var(--d) ease-out forwards;
+}
+.kokukoku-cover .d-cover-logo {
+  position: absolute;
+  left: 42px;
+  bottom: 28px;
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  opacity: 0;
+  mix-blend-mode: multiply;
+  animation: d-in 0.42s 0.98s ease-out forwards;
+}
+</style>
+
+---
+title: 3つの困りごと
+class: mk-scroll kokukoku-problems
 ---
 
-# 動画再生 `自動再生不要ならautoplayは外す`
+<div class="d-grain"></div>
+<div class="d-lamp"></div>
+<div class="d-scroll">
+<div class="d-paper">
+<div class="d-fiber"></div>
+<div class="d-stain"></div>
+<div class="d-inner d-mode-text">
+<div class="d-cols">
+<div class="d-daisen">困 り ご と</div>
+<div class="d-col d-col-title" style="--d:0.60s"><h1>3つの困りごと</h1></div>
+<div class="d-col" style="--d:0.70s"><span class="d-no">一</span>何に時間を使ったか分からない</div>
+<div class="d-col" style="--d:0.78s"><span class="d-no">二</span>次の予定まで、あと何分か<em>知りたいのは予定と予定の「間」</em></div>
+<div class="d-col" style="--d:0.86s"><span class="d-no">三</span>集中すると休憩を忘れる</div>
+<div class="d-col d-col-close" style="--d:0.94s">三つとも判断の材料。ひとつのパネルに</div>
+</div>
+<div class="d-art">
+<svg class="d-clock" viewBox="0 0 240 240" aria-hidden="true">
+<circle class="d-ring" cx="120" cy="120" r="104" pathLength="100"/>
+<circle class="d-ring2" cx="120" cy="120" r="86"/>
+<g class="d-tick">
+<line x1="120" y1="26" x2="120" y2="40"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(30 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(60 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(90 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(120 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(150 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(180 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(210 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(240 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(270 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(300 120 120)"/>
+<line x1="120" y1="26" x2="120" y2="40" transform="rotate(330 120 120)"/>
+</g>
+<g class="d-hands">
+<line class="d-hand-h" x1="120" y1="120" x2="120" y2="66"/>
+<line class="d-hand-m" x1="120" y1="120" x2="120" y2="44"/>
+<circle class="d-pivot" cx="120" cy="120" r="4.5"/>
+</g>
+</svg>
+</div>
+</div>
+</div>
+<div class="d-rod d-rod-l"></div>
+<div class="d-rod d-rod-r"></div>
+</div>
 
-<SlidevVideo controls autoplay="once" autoreset="slide" class="mx-auto h-90%">
-    <source src="./public/attachments/colot.mp4" type="video/mp4" />
+<style>
+.kokukoku-problems .d-clock {
+  width: 314px;
+  height: 314px;
+  fill: none;
+}
+.kokukoku-problems .d-ring {
+  stroke: #2c2419;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  opacity: 0.82;
+  stroke-dasharray: 100 100;
+  stroke-dashoffset: 100;
+  animation: problems-draw 0.55s 0.58s cubic-bezier(0.26, 0.7, 0.3, 1) forwards;
+}
+@keyframes problems-draw {
+  to { stroke-dashoffset: 0; }
+}
+.kokukoku-problems .d-ring2 {
+  stroke: rgba(44, 36, 25, 0.22);
+  stroke-width: 1;
+  opacity: 0;
+  animation: d-fade 0.28s 1.05s ease-out forwards;
+}
+.kokukoku-problems .d-tick line {
+  stroke: rgba(44, 36, 25, 0.5);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.kokukoku-problems .d-tick,
+.kokukoku-problems .d-hands {
+  opacity: 0;
+  animation: d-fade 0.28s 1.12s ease-out forwards;
+}
+.kokukoku-problems .d-hand-h {
+  stroke: #2c2419;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transform-origin: 120px 120px;
+  transform: rotate(-58deg);
+}
+.kokukoku-problems .d-hand-m {
+  stroke: #2c2419;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  transform-origin: 120px 120px;
+  animation: problems-spin 24s linear infinite;
+}
+@keyframes problems-spin {
+  from { transform: rotate(58deg); }
+  to { transform: rotate(418deg); }
+}
+.kokukoku-problems .d-pivot {
+  fill: #b23f26;
+  stroke: none;
+}
+</style>
+
+---
+title: 呼び出して、計測する
+class: mk-scroll kokukoku-demo
+---
+
+<div class="d-grain"></div>
+<div class="d-lamp"></div>
+<div class="d-scroll">
+<div class="d-paper">
+<div class="d-fiber"></div>
+<div class="d-stain"></div>
+<div class="d-inner d-mode-art">
+<div class="d-cols">
+<div class="d-daisen">計 測</div>
+<div class="d-col d-col-title" style="--d:0.60s"><h1>呼び出して、計測する</h1></div>
+<div class="d-col" style="--d:0.70s"><span class="d-no">一</span>ホットキーで画面中央へ</div>
+<div class="d-col" style="--d:0.78s"><span class="d-no">二</span>数字キーで計測、qで消す</div>
+</div>
+<div class="d-art">
+<div class="d-figbox">
+<div class="d-fig">
+<SlidevVideo autoplay="once" autoreset="slide" muted playsinline>
+<source src="./public/media/demo-a-invoke-and-track-tight.mp4" type="video/mp4" />
 </SlidevVideo>
-
----
-layout: image-left
-image: https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/Notes/attachments/colot.webp
-background-size: contain
----
-
-# 左半分を画像にしたい場合
-
-```yaml
-background-size: contain
-```
-
-を追加することで縦が収まるサイズに調整している。
-
----
-layout: image-left
-image: https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/Notes/attachments/colot.webp
-background-size: cover
-ratio: 25%
----
-
-# 左25%を画像にしたい場合
-
-```yaml
-ratio: 25%
-```
-
-で割合を指定できる。要独自コンポーネント。
-
-```yaml
-background-size: cover
-```
-
-`contain` ではなく `cover` にすることで最大表示。
-
----
-layout: image-right
-image: https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/Notes/attachments/obsidian-mini2.webp
-background-size: contain
----
-
-# 右半分を画像にしたい場合
-
-```yaml
-background-size: contain
-```
-
-を追加することで縦が収まるサイズに調整している。
-
----
-layout: image-right
-image: https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/Notes/attachments/obsidian-mini2.webp
-background-size: contain
-ratio: 25%
----
-
-# 右25%を画像にしたい場合
-
-```yaml
-ratio: 25%
-```
-
-で割合を指定できる。要独自コンポーネント。
-
----
-
-# 画像パスの注意点
-
-指定する対象によって正しくパスを入力しないと『ビルド時』『デプロイ時』に解決しなくなる。
-
-| 対象                                       | パスの開始              |
-| ------------------------------------------ | ----------------------- |
-| HTMLの `src` 属性                          | `./public/attachments/` |
-| Vueファイル内の `src` 属性 に渡されるprops | `./attachments/`        |
-| フロントマターのプロパティ                 | `/attachments/`         |
-| Markdownの画像リンク                       | `/attachments/`         |
-| CSSの `url`                                | `/attachments/`         |
-
-<refer>
-
-[📕Slidevの画像パスに対する注意 - Minerva](https://minerva.mamansoft.net/Notes/%F0%9F%93%95Slidev%E3%81%AE%E7%94%BB%E5%83%8F%E3%83%91%E3%82%B9%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E6%B3%A8%E6%84%8F)
-
-</refer>
-
----
-layout: iframe-refer
-url: https://minerva.mamansoft.net/Notes/%E3%83%9F%E3%83%8D%E3%83%AB%E3%83%B4%E3%82%A1
-refer-text: Minerva
-scale: 1 # default
----
-
-# 全面iframe
-
----
-
-# Richリンクカード
-
-<div class="link-card-v2">
-  <div class="link-card-v2-site">
-    <img class="link-card-v2-site-icon" src="https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/favicon-64.png" />
-    <span class="link-card-v2-site-name">Minerva</span>
-  </div>
-  <div class="link-card-v2-title">
-    📘オブシディアの1日から紐解くObsidianの使い方
-  </div>
-  <div class="link-card-v2-content">平日の1日を追いながら、Obsidianでのデイリーノート運用、SilhouetteやVarious Complementsなど自作プラグインを使ったタスク管理・議事録・ドキュメント連携の実例を、ミネルヴァとオブシディアが紹介します。</div>
-  <img class="link-card-v2-image" src="https://publish-01.obsidian.md/access/35d05cd1bf5cc500e11cc8ba57daaf88/%F0%9F%93%98Articles/attachments/2025-12-25.webp" />
-  <a data-href="📘オブシディアの1日から紐解くObsidianの使い方" class="internal-link"></a>
+</div>
+<div class="d-figcap">図<span class="d-cap-no">一</span> ― マウスに触れず、数秒で計測</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-rod d-rod-l"></div>
+<div class="d-rod d-rod-r"></div>
 </div>
 
----
-layout: two-cols-header
----
-
-# ヘッダの下を左右に分割
-
-::left::
-
-- 左側
-
-::right::
-
-- 右側
-
----
-layout: two-cols-header-ratio
-columns: "3:7"
----
-
-# ヘッダの下を左右に分割 (比率指定)
-
-::left::
-
-- 左側 (30%)
-
-::right::
-
-- 右側 (70%)
-
----
-layout: two-cols
----
-
-# ヘッダ含めて左右に分割(左側のタイトル)
-
-- 左側
-
-::right::
-
-# ヘッダ含めて左右に分割(右側のタイトル)
-
-- 右側
-
----
-title: Chapter2
-layout: chapter-divider
-activeChapter: 2
----
-
----
-layout: fact
----
-
-# コードブロックの表現は多い
-
----
-
-# 普通のコードブロック
-
-```lua
-return {
-  -- 'tadashi-aikawa/slidev-preview.nvim',
-  dir = "~/git/github.com/tadashi-aikawa/slidev-preview.nvim",
-  cmd = "SlidevPreviewStart",
-  opts = {},
+<style>
+.kokukoku-demo .d-art {
+  flex: 1 1 auto;
+  width: 0;
 }
-```
-
----
-
-# ファイル名・行番号つき
-
-```lua [slidev-preview.lua ~i-vscode-icons:file-type-lua~] {*}{lines: true}
-return {
-  -- 'tadashi-aikawa/slidev-preview.nvim',
-  dir = "~/git/github.com/tadashi-aikawa/slidev-preview.nvim",
-  cmd = "SlidevPreviewStart",
-  opts = {},
+.kokukoku-demo .d-fig {
+  width: 448px;
+  aspect-ratio: 864 / 896;
 }
-```
-
-※ ヘッドマターで `lineNumbers: true` を設定すれば `lines: true` は不要
-
----
-
-# コードグループ
-
-::code-group
-
-```sh [npm]
-npm i @slidev/cli
-```
-
-```sh [yarn]
-yarn add @slidev/cli
-```
-
-```sh [pnpm]
-pnpm add @slidev/cli
-```
-
-::
-
----
-
-# 高度なコードブロック
-
-`{*}{maxHeight:}` で指定する。`%` が良さげ。
-
-```vue [MethodBadge.vue] {*}{maxHeight:'80%', lines: true}
-<script setup lang="ts">
-import type { PrimitiveProps } from "reka-ui";
-import type { HTMLAttributes } from "vue";
-import type { BadgeVariants } from ".";
-import { reactiveOmit } from "@vueuse/core";
-import { Primitive } from "reka-ui";
-import { cn } from "@/lib/utils";
-import { badgeVariants } from ".";
-
-const props = defineProps<
-  PrimitiveProps & {
-    variant?: BadgeVariants["variant"];
-    class?: HTMLAttributes["class"];
-  }
->();
-
-const delegatedProps = reactiveOmit(props, "class");
-</script>
-
-<template>
-  <Primitive
-    data-slot="badge"
-    :class="cn(badgeVariants({ variant }), props.class)"
-    v-bind="delegatedProps"
-  >
-    <slot />
-  </Primitive>
-</template>
-```
-
----
-
-# 高度なコードブロック
-
-ハイライト指定は `{1,10}` や `{5-7}` のように。`|` 区切りでアニメーション。
-
-```vue [MethodBadge.vue] {1,18|2-8|10-15|17}{maxHeight:'80%', lines: true}
-<script setup lang="ts">
-import type { PrimitiveProps } from "reka-ui";
-import type { HTMLAttributes } from "vue";
-import type { BadgeVariants } from ".";
-import { reactiveOmit } from "@vueuse/core";
-import { Primitive } from "reka-ui";
-import { cn } from "@/lib/utils";
-import { badgeVariants } from ".";
-
-const props = defineProps<
-  PrimitiveProps & {
-    variant?: BadgeVariants["variant"];
-    class?: HTMLAttributes["class"];
-  }
->();
-
-const delegatedProps = reactiveOmit(props, "class");
-</script>
-
-<template>
-  <Primitive
-    data-slot="badge"
-    :class="cn(badgeVariants({ variant }), props.class)"
-    v-bind="delegatedProps"
-  >
-    <slot />
-  </Primitive>
-</template>
-```
-
----
-
-# 高度なコードブロック
-
-アニメーション表示 `md magic-move`
-
-````md magic-move {lines: true}
-```ts
-const x = 1;
-```
-
-```ts
-const x = 1;
-const y = 1;
-```
-
-```ts
-const x = -1;
-```
-````
-
----
-title: Chapter3
-layout: chapter-divider
-activeChapter: 3
----
-
----
-
-# アニメーション 基本
-
-<div v-click.fade-in>
-
-内部の要素をフェードイン
-
-</div>
-
-<div v-click.fade-in>
-
-2回目のクリックで表示
-
-</div>
-
-<div v-after.fade-in>
-
-直前のアニメーションと同時に表示
-
-</div>
-
----
-
-# アニメーション 表示要素の切り替え
-
-<div v-click.fade-in="[1, 2]">
-
-1回目のクリックのみで表示
-
-</div>
-
-<div v-click.fade-in="[2, 3]">
-
-2回目のクリックのみで表示
-
-</div>
-
-<div v-click.fade-in="3">
-
-3回目のクリックのみで表示
-
-</div>
-
----
-
-# スポットライト
-
-クリックするとスポットライトがあたる。
-
-<Spotlight v-drag="[64,93,599,79]" v-click.fade-in class="w-128 h-64" />
-
----
-title: Chapter4
-layout: chapter-divider
-activeChapter: 4
----
-
----
-
-# 改訂履歴
-
-右上に改訂履歴が表示される。
-
-<revision-histories :revisions="[
-  {date: '2026-05-26', content: '初版'},
-  {date: '2026-05-27', content: 'ちょっと修正'},
-  {date: '2026-05-30', content: 'ガッツリ修正しました'}
-]" />
-
----
-
-# フキダシ
-
-<Bubble v-click image="./attachments/etokichi-plus1.webp" position="right" imageHeight="220">
+</style>
