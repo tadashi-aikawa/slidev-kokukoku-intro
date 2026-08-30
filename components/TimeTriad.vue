@@ -40,7 +40,7 @@ const visual = computed(() => {
     return {
       weights: [progress, 0, 1 - progress],
       hour: lerp(300, 285, progress),
-      minute: lerp(360, 540, progress),
+      minute: lerp(360, 180, progress),
     }
   }
   return { weights: [1, 0, 0], hour: 285, minute: 180 }
