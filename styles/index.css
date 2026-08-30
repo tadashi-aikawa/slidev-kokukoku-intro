@@ -1469,11 +1469,11 @@
   font-size: 30px;
   letter-spacing: 0.09em;
 }
-.kk-kanzashi-focus .kk-motif:not(.kk-motif-kanzashi) {
-  opacity: 0.16;
+.kk-motif-click-dim.slidev-vclick-hidden {
+  opacity: 0.16 !important;
 }
 
-/* 10. 記事カードと本文全文 */
+/* 9. 記事カードと本文全文 */
 .slidev-layout.kk-kanzashi-story .kk-inner {
   padding: 24px 32px;
 }
@@ -1539,7 +1539,7 @@
   will-change: transform;
 }
 
-/* 11. インストール */
+/* 10. インストール */
 .kk-install-command {
   position: absolute;
   left: 50%;
@@ -1567,7 +1567,7 @@
   letter-spacing: 0.12em;
 }
 
-/* 12. 締め */
+/* 11. 締め */
 .slidev-layout.kk-closing .kk-closing-inner {
   position: relative;
   align-items: center;
