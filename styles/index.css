@@ -1466,8 +1466,11 @@
   font-size: 30px;
   letter-spacing: 0.09em;
 }
+.kk-kanzashi-focus .kk-motif:not(.kk-motif-kanzashi) {
+  opacity: 0.16;
+}
 
-/* 9. 記事カードと本文全文 */
+/* 10. 記事カードと本文全文 */
 .slidev-layout.kk-kanzashi-story .kk-inner {
   padding: 24px 32px;
 }
@@ -1533,7 +1536,7 @@
   will-change: transform;
 }
 
-/* 10. インストール */
+/* 11. インストール */
 .kk-install-command {
   position: absolute;
   left: 50%;
@@ -1561,7 +1564,7 @@
   letter-spacing: 0.12em;
 }
 
-/* 11. 締め */
+/* 12. 締め */
 .slidev-layout.kk-closing .kk-closing-inner {
   position: relative;
   align-items: center;

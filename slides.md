@@ -34,7 +34,7 @@ class: mk-scroll kk-scroll kk-unroll kk-three-times
   </div>
   <div class="kk-statement">3つを一つで扱うものは、案外ない</div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
-<div class="d-page-number kk-page-number">2 / 11</div>
+<div class="d-page-number kk-page-number">2 / 12</div>
 
 ---
 title: 三つの時間が一つのUIで動く
@@ -47,7 +47,7 @@ class: mk-scroll kk-scroll kk-sync
   <h1 class="kk-title">三つの時間が、一つのUIで動く</h1>
   <TimeTriad />
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
-<div class="d-page-number kk-page-number">3 / 11</div>
+<div class="d-page-number kk-page-number">3 / 12</div>
 
 ---
 title: 呼び出して計測
@@ -68,7 +68,7 @@ class: mk-scroll kk-scroll kk-video-slide kk-video-a
     </div>
   </div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
-<div class="d-page-number kk-page-number">4 / 11</div>
+<div class="d-page-number kk-page-number">4 / 12</div>
 
 ---
 title: KOKUKOKUのパネル解剖
@@ -86,7 +86,7 @@ class: mk-scroll kk-scroll kk-anatomy
     <div class="kk-callout kk-callout-candle"><span>連続作業</span></div>
   </div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
-<div class="d-page-number kk-page-number">5 / 11</div>
+<div class="d-page-number kk-page-number">5 / 12</div>
 
 ---
 title: 予定通知
@@ -102,7 +102,7 @@ class: mk-scroll kk-scroll kk-video-slide kk-video-b
   </div>
   <div class="kk-dual-message"><strong>前面でリマンドしてくれる</strong><span>フォーカスは奪わない</span></div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
-<div class="d-page-number kk-page-number">6 / 11</div>
+<div class="d-page-number kk-page-number">6 / 12</div>
 
 ---
 title: 集中のライフ
@@ -122,7 +122,7 @@ class: mk-scroll kk-scroll kk-candle-life
     </div>
   </div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
-<div class="d-page-number kk-page-number">7 / 11</div>
+<div class="d-page-number kk-page-number">7 / 12</div>
 
 ---
 title: 世界観と遊び心
@@ -140,7 +140,25 @@ class: mk-scroll kk-scroll kk-playful
     <div class="kk-motif kk-motif-soroban"><img src="./public/media/icon-soroban.svg" alt="そろばん" /><span>そろばん</span></div>
   </div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
-<div class="d-page-number kk-page-number">8 / 11</div>
+<div class="d-page-number kk-page-number">8 / 12</div>
+
+---
+title: 玉簪へフォーカス
+class: mk-scroll kk-scroll kk-playful kk-kanzashi-focus
+---
+
+<div class="d-grain"></div><div class="d-lamp"></div>
+<div class="d-scroll"><div class="d-paper"><div class="d-fiber"></div><div class="d-stain"></div>
+<div class="d-inner kk-inner kk-content">
+  <h1 class="kk-title">世界観を大切に、遊び心のあるUIを</h1>
+  <div class="kk-motif-stage">
+    <div class="kk-motif kk-motif-clock"><img src="./public/media/icon-clock.svg" alt="和紙の丸窓" /><span>丸窓</span></div>
+    <div class="kk-motif kk-motif-kanzashi"><img src="./public/media/icon-kanzashi-pinned.svg" alt="玉簪" /><span>玉簪</span></div>
+    <div class="kk-motif kk-motif-candle"><img src="./public/media/icon-candle.svg" alt="和ろうそく" /><span>和ろうそく</span></div>
+    <div class="kk-motif kk-motif-soroban"><img src="./public/media/icon-soroban.svg" alt="そろばん" /><span>そろばん</span></div>
+  </div>
+</div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
+<div class="d-page-number kk-page-number">9 / 12</div>
 
 ---
 title: 押しピンを簪にするまでの18弾
@@ -162,7 +180,7 @@ class: mk-scroll kk-scroll kk-kanzashi-story
     <ArticleScroll src="./public/media/kanzashi-article-full.png" alt="記事本文の全文キャプチャ" />
   </div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
-<div class="d-page-number kk-page-number">9 / 11</div>
+<div class="d-page-number kk-page-number">10 / 12</div>
 
 ---
 title: インストール
@@ -171,7 +189,7 @@ class: kk-lacquer kk-install
 
 <div class="kk-lacquer-grain"></div>
 <div class="kk-install-command"><span>$</span> brew install --cask tadashi-aikawa/tap/kokukoku</div>
-<div class="kk-dark-page-number">10 / 11</div>
+<div class="kk-dark-page-number">11 / 12</div>
 
 ---
 title: 刻一刻と時を見守る
