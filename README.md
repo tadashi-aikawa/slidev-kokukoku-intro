@@ -1,6 +1,6 @@
 # slidev-kokukoku-intro
 
-社内LT「KOKUKOKU」紹介(5分・2026-09-14)のスライド。[slidev-sandbox](https://github.com/tadashi-aikawa/slidev-sandbox) を原本に作成。
+「KOKUKOKU」紹介スライド。[slidev-sandbox](https://github.com/tadashi-aikawa/slidev-sandbox) を原本に作成。
 
 ## 起動
 
