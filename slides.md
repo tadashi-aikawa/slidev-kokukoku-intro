@@ -19,20 +19,20 @@ class: kk-lacquer kk-opening
 </div>
 
 ---
-title: 気にする三つの時間
-class: mk-scroll kk-scroll kk-three-times
+title: 気にする3つの時間
+class: mk-scroll kk-scroll kk-unroll kk-three-times
 ---
 
 <div class="d-grain"></div><div class="d-lamp"></div>
 <div class="d-scroll"><div class="d-paper"><div class="d-fiber"></div><div class="d-stain"></div>
 <div class="d-inner kk-inner kk-content">
-  <h1 class="kk-title">気にする三つの時間</h1>
+  <h1 class="kk-title">気にする3つの時間</h1>
   <div class="kk-time-trio">
     <div class="kk-time-card kk-time-past"><strong>過去</strong><span>記録</span></div>
     <div class="kk-time-card kk-time-now"><strong>今</strong><span>現在時刻</span></div>
     <div class="kk-time-card kk-time-future"><strong>未来</strong><span>予定</span></div>
   </div>
-  <div class="kk-statement">三つを一つで扱うものは、案外ない</div>
+  <div class="kk-statement">3つを一つで扱うものは、案外ない</div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
 <div class="d-page-number kk-page-number">2 / 11</div>
 
@@ -57,25 +57,29 @@ class: mk-scroll kk-scroll kk-video-slide kk-video-a
 <div class="d-grain"></div><div class="d-lamp"></div>
 <div class="d-scroll"><div class="d-paper"><div class="d-fiber"></div><div class="d-stain"></div>
 <div class="d-inner kk-inner kk-content">
-  <h1 class="kk-title">呼び出して、計測する</h1>
-  <div class="kk-video-frame kk-video-frame-a">
-    <SlidevVideo autoplay loop muted playsinline>
-      <source src="./public/media/demo-a-invoke-and-track-tight.mp4" type="video/mp4" />
-    </SlidevVideo>
+  <div class="kk-side-demo">
+    <div class="kk-video-frame kk-video-frame-a">
+      <SlidevVideo autoplay loop muted playsinline>
+        <source src="./public/media/demo-a-invoke-and-track-tight.mp4" type="video/mp4" />
+      </SlidevVideo>
+    </div>
+    <div class="kk-vertical-copy kk-invoke-copy" aria-label="呼び出して計測する操作">
+      <div class="kk-vertical-line kk-vertical-lead">ホットキーで呼び出す</div>
+      <div class="kk-vertical-line">数字キーで計測</div>
+      <div class="kk-vertical-line"><span class="kk-upright">q</span>で閉じる</div>
+    </div>
   </div>
-  <div class="kk-video-message">ホットキーと数字キーだけ</div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
 <div class="d-page-number kk-page-number">4 / 11</div>
 
 ---
-title: パネルの中身
+title: KOKUKOKUのパネル解剖
 class: mk-scroll kk-scroll kk-anatomy
 ---
 
 <div class="d-grain"></div><div class="d-lamp"></div>
 <div class="d-scroll"><div class="d-paper"><div class="d-fiber"></div><div class="d-stain"></div>
 <div class="d-inner kk-inner kk-content">
-  <h1 class="kk-title">パネルの中身</h1>
   <div class="kk-anatomy-stage">
     <img class="kk-panel-image" src="./public/media/still-panel.png" alt="KOKUKOKUのパネル全体" />
     <div class="kk-callout kk-callout-clock"><span>現在時刻</span></div>
@@ -100,7 +104,7 @@ class: mk-scroll kk-scroll kk-video-slide kk-video-b
       <source src="./public/media/demo-b-calendar-notification-tight.mp4" type="video/mp4" />
     </SlidevVideo>
   </div>
-  <div class="kk-dual-message"><strong>触っていないのに現れる</strong><span>フォーカスは奪わない</span></div>
+  <div class="kk-dual-message"><strong>全面でリマンドしてくれる</strong><span>フォーカスは奪わない</span></div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
 <div class="d-page-number kk-page-number">6 / 11</div>
 
@@ -112,14 +116,16 @@ class: mk-scroll kk-scroll kk-candle-life
 <div class="d-grain"></div><div class="d-lamp"></div>
 <div class="d-scroll"><div class="d-paper"><div class="d-fiber"></div><div class="d-stain"></div>
 <div class="d-inner kk-inner kk-content">
-  <h1 class="kk-title">ろうそくは、集中のライフ</h1>
-  <div class="kk-candle-layout">
+  <div class="kk-side-demo kk-candle-layout">
     <div class="kk-video-frame kk-video-frame-c">
       <SlidevVideo autoplay loop muted playsinline>
         <source src="./public/media/demo-c-candle-burnout.mp4" type="video/mp4" />
       </SlidevVideo>
     </div>
-    <div class="kk-candle-copy"><strong>尽きたら</strong><span>休憩のサイン</span></div>
+    <div class="kk-vertical-copy kk-candle-copy" aria-label="ろうそくは集中のライフ。尽きたら休憩のサイン">
+      <div class="kk-vertical-line kk-vertical-lead">ろうそくは集中のライフ</div>
+      <div class="kk-vertical-line">尽きたら休憩のサイン</div>
+    </div>
   </div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
 <div class="d-page-number kk-page-number">7 / 11</div>
@@ -150,16 +156,17 @@ class: mk-scroll kk-scroll kk-kanzashi-story
 <div class="d-grain"></div><div class="d-lamp"></div>
 <div class="d-scroll"><div class="d-paper"><div class="d-fiber"></div><div class="d-stain"></div>
 <div class="d-inner kk-inner kk-content">
-  <h1 class="kk-title">押しピンを簪にするまでの18弾</h1>
-  <div class="kk-story-message">一度決めた前提が、四度ひっくり返った</div>
-  <a class="kk-process-link social-card" href="https://minerva.mamansoft.net/Notes/%F0%9F%93%B0%E6%8A%BC%E3%81%97%E3%83%94%E3%83%B3%E3%82%92%E7%B0%AA%E3%81%AB%E3%81%99%E3%82%8B%E3%81%BE%E3%81%A7%E3%81%AE18%E5%BC%BE">
-    <div class="kk-process-step"><img src="./public/media/kanzashi-fig1.webp" alt="初期の花簪案" /><strong>案</strong></div>
-    <div class="kk-process-arrow">→</div>
-    <div class="kk-process-step"><img src="./public/media/kanzashi-fig3.webp" alt="玉簪を実寸で比較した案" /><strong>実寸</strong></div>
-    <div class="kk-process-arrow">→</div>
-    <div class="kk-process-step"><img src="./public/media/kanzashi-fig8.webp" alt="決定した玉簪の比較" /><strong>決定</strong></div>
-  </a>
-  <div class="kk-story-site">minerva.mamansoft.net</div>
+  <div class="kk-article-layout">
+    <a class="kk-article-card" href="https://minerva.mamansoft.net/Notes/%F0%9F%93%B0%E6%8A%BC%E3%81%97%E3%83%94%E3%83%B3%E3%82%92%E7%B0%AA%E3%81%AB%E3%81%99%E3%82%8B%E3%81%BE%E3%81%A7%E3%81%AE18%E5%BC%BE">
+      <img src="./public/media/kanzashi-article-header.webp" alt="記事『押しピンを簪にするまでの18弾』のヘッダー画像" />
+      <div class="kk-article-card-copy">
+        <span>開発記録</span>
+        <strong>押しピンを簪にするまでの18弾</strong>
+        <small>minerva.mamansoft.net</small>
+      </div>
+    </a>
+    <ArticleScroll src="./public/media/kanzashi-article-full.png" alt="記事本文の全文キャプチャ" />
+  </div>
 </div></div><div class="d-rod d-rod-l"></div><div class="d-rod d-rod-r"></div></div>
 <div class="d-page-number kk-page-number">9 / 11</div>
 

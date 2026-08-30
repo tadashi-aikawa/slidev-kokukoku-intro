@@ -874,6 +874,17 @@
   opacity: 0;
   animation: kk-content-in 0.48s 0.08s ease-out forwards;
 }
+.slidev-layout.kk-scroll.kk-unroll .d-rod-l {
+  left: var(--span);
+  animation: d-roll 0.75s 0.1s cubic-bezier(0.2, 0.78, 0.24, 1) forwards;
+}
+.slidev-layout.kk-scroll.kk-unroll .d-paper {
+  clip-path: inset(0 0 0 100%);
+  animation: d-unroll 0.75s 0.1s cubic-bezier(0.2, 0.78, 0.24, 1) forwards;
+}
+.slidev-layout.kk-scroll.kk-unroll .kk-content {
+  animation-delay: 0.94s;
+}
 @keyframes kk-content-in {
   from { opacity: 0; transform: translateY(7px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1267,16 +1278,63 @@
   height: 100%;
   object-fit: cover;
 }
-.kk-video-frame-a {
-  width: 425px;
-  aspect-ratio: 864 / 896;
-  margin-top: 12px;
+.kk-side-demo {
+  display: grid;
+  grid-template-columns: 540px 1fr;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
-.kk-video-message {
-  margin-top: 12px;
-  color: #443624;
-  font-size: 30px;
-  letter-spacing: 0.14em;
+.kk-side-demo .kk-video-frame {
+  justify-self: center;
+  margin: 0;
+}
+.kk-side-demo .kk-video-frame video {
+  object-fit: contain;
+}
+.kk-video-frame-a {
+  width: 492px;
+  height: 510px;
+}
+.kk-vertical-copy {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 35px;
+  height: 475px;
+  padding-top: 8px;
+  color: #302519;
+}
+.kk-vertical-line {
+  position: relative;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: #33281b;
+  font-size: 34px;
+  line-height: 1.25;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+.kk-vertical-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -18px;
+  width: 1px;
+  height: 100%;
+  background: rgba(79, 58, 28, 0.18);
+}
+.kk-vertical-lead {
+  color: #9f3825;
+  font-size: 38px;
+  font-weight: 500;
+}
+.kk-upright {
+  display: inline-block;
+  text-orientation: upright;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  letter-spacing: 0;
 }
 .kk-video-b .kk-title { font-size: 50px; }
 .kk-video-frame-b {
@@ -1299,48 +1357,30 @@
   color: #7b2f21;
   font-size: 29px;
 }
-.kk-candle-life .kk-title { font-size: 50px; }
 .kk-candle-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 90px;
-  width: 100%;
-  margin-top: 18px;
+  grid-template-columns: 540px 1fr;
 }
 .kk-video-frame-c {
-  width: 414px;
-  aspect-ratio: 864 / 944;
+  width: 467px;
+  height: 510px;
 }
 .kk-candle-copy {
-  display: flex;
-  flex-direction: column;
-  color: #2f2519;
-  letter-spacing: 0.12em;
-}
-.kk-candle-copy strong {
-  color: #a33825;
-  font-size: 48px;
-  font-weight: 500;
-}
-.kk-candle-copy span {
-  margin-top: 20px;
-  font-size: 36px;
+  gap: 45px;
 }
 
 /* 5. パネル解剖 */
 .kk-anatomy-stage {
   position: relative;
-  width: 960px;
-  height: 450px;
-  margin-top: 18px;
+  width: 1000px;
+  height: 524px;
+  margin-top: 0;
 }
 .kk-panel-image {
   position: absolute;
   left: 50%;
   top: 0;
-  width: 425px;
-  height: 446px;
+  width: 500px;
+  height: 524px;
   transform: translateX(-50%);
   object-fit: contain;
   border: 2px solid #463a29;
@@ -1368,14 +1408,14 @@
   height: 2px;
   background: #ae3d28;
 }
-.kk-callout-clock { left: 4px; top: 32px; }
-.kk-callout-events { right: 4px; top: 142px; justify-content: flex-end; }
-.kk-callout-tracks { left: 4px; top: 257px; }
-.kk-callout-candle { right: 4px; top: 360px; justify-content: flex-end; }
+.kk-callout-clock { left: 0; top: 35px; }
+.kk-callout-events { right: 0; top: 155px; justify-content: flex-end; }
+.kk-callout-tracks { left: 0; top: 307px; }
+.kk-callout-candle { right: 0; top: 423px; justify-content: flex-end; }
 .kk-callout-clock::after,
-.kk-callout-tracks::after { left: 180px; }
+.kk-callout-tracks::after { left: 190px; width: 155px; }
 .kk-callout-events::after,
-.kk-callout-candle::after { right: 180px; }
+.kk-callout-candle::after { right: 190px; width: 155px; }
 
 /* 8. 世界観 */
 .kk-playful .kk-title { font-size: 49px; }
@@ -1414,55 +1454,72 @@
   letter-spacing: 0.09em;
 }
 
-/* 9. 簪18弾 */
-.kk-kanzashi-story .kk-title { font-size: 48px; }
-.kk-story-message {
-  margin-top: 15px;
-  color: #9d3022;
-  font-size: 32px;
-  letter-spacing: 0.08em;
+/* 9. 記事カードと本文全文 */
+.slidev-layout.kk-kanzashi-story .kk-inner {
+  padding: 24px 32px;
 }
-.kk-process-link.social-card {
+.kk-article-layout {
   display: grid;
-  grid-template-columns: 1fr 46px 1fr 46px 1fr;
-  align-items: center;
-  gap: 11px;
-  width: 960px;
-  margin-top: 20px;
+  grid-template-columns: 36% 64%;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+}
+.kk-article-card {
+  align-self: center;
+  overflow: hidden;
   color: inherit;
   text-decoration: none;
+  background: rgba(248, 240, 217, 0.9);
+  border: 2px solid rgba(69, 51, 26, 0.62);
+  box-shadow: 0 16px 30px rgba(64, 45, 20, 0.28);
 }
-.kk-process-step {
+.kk-article-card img {
+  display: block;
+  width: 100%;
+  height: 178px;
+  object-fit: cover;
+}
+.kk-article-card-copy {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 20px 22px 18px;
 }
-.kk-process-step img {
-  width: 274px;
-  height: 190px;
-  object-fit: cover;
-  border: 2px solid #4d402d;
-  background: #171817;
-  box-shadow: 0 10px 19px rgba(59, 42, 19, 0.26);
-}
-.kk-process-step strong {
-  margin-top: 12px;
-  color: #2d2418;
-  font-size: 29px;
-  font-weight: 500;
+.kk-article-card-copy span {
+  color: #a13a27;
+  font-size: 18px;
   letter-spacing: 0.18em;
 }
-.kk-process-arrow {
-  color: #ad3d28;
-  font-size: 37px;
-  text-align: center;
+.kk-article-card-copy strong {
+  margin-top: 13px;
+  color: #2d2418;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.06em;
 }
-.kk-story-site {
-  margin-top: 4px;
-  color: #695b45;
+.kk-article-card-copy small {
+  margin-top: 22px;
+  color: #6c5d48;
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
-  font-size: 20px;
-  letter-spacing: 0.04em;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+}
+.kk-article-viewport {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border: 2px solid rgba(69, 51, 26, 0.55);
+  background: #fff8e7;
+  box-shadow: 0 16px 30px rgba(64, 45, 20, 0.24);
+}
+.kk-article-capture {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  transform: translateY(0);
+  will-change: transform;
 }
 
 /* 10. インストール */

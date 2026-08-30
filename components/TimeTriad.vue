@@ -86,7 +86,7 @@ onBeforeUnmount(() => cancelAnimationFrame(frameId))
       <div class="kk-triad-phase">
         <span :style="{ opacity: visual.weights[0] }">作業を記録</span>
         <span :style="{ opacity: visual.weights[1] }">予定が光る</span>
-        <span :style="{ opacity: visual.weights[2] }">予定が始まる</span>
+        <span :style="{ opacity: visual.weights[2] }">社内業務を計測</span>
       </div>
     </div>
     <div class="kk-triad-video">
